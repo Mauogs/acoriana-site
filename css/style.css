@@ -8,9 +8,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
+/* Navbar */
+
 .navbar {
   width: 100%;
-  height: 64px;
+  height: 72px;
 
   background-color: #292929;
 
@@ -18,7 +20,7 @@ body {
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 18px;
+  padding: 0 30px;
 
   color: white;
 }
@@ -30,9 +32,10 @@ body {
 }
 
 .logo-area img {
-  width: 120px;
-  height: 85px;
+  width: 90px;
+  height: 50px;
   object-fit: contain;
+
 }
 
 .logo-text {
@@ -54,24 +57,24 @@ body {
 .menu {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .links {
   color: #d5d5d5;
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 
-  padding: 9px 13px;
+  padding: 8px 12px;
 
   border-radius: 5px;
 }
 
 .links:hover {
   background-color: #d69d08;
-  color: #222; 
+  color: #222;
 }
 
 .acoes {
@@ -85,7 +88,7 @@ body {
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  color: #ddd ;
+  color: #ddd;
 
   display: flex;
   align-items: center;
@@ -118,4 +121,105 @@ body {
   justify-content: center;
 
   font-size: 9px;
+}
+
+/* Seção Hero */
+
+.hero {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 30px;
+  gap: 40px;
+}
+
+.hero-text {
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text h2 {
+  font-size: 30px;
+  line-height: 1.4;
+  font-weight: bold;
+
+  padding: 10px 0;
+
+}
+
+.hero-text p {
+  font-size: 16px;
+  padding: 10px 0;
+  letter-spacing: 1px;
+}
+
+#hero-title {
+  color: #dc9d08;
+  background-color: #292929;
+
+  display: inline-block;
+  width: fit-content;
+
+  padding: 6px 15px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-encomenda {
+  background-color: #d69d08;
+
+  border-radius: 5px;
+
+  padding: 10px 20px;
+}
+
+.btn-encomenda:hover {
+  background-color: #eab11d;
+}
+
+.btn-encomenda a {
+  text-decoration: none;
+  color: #222;
+}
+
+.btn-produtos {
+  padding: 10px 20px;
+}
+
+.btn-produtos a {
+  text-decoration: none;  
+  color: gray;
+}
+
+.hero-outros-textos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 0;
+}
+
+.hero-image {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image>img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
 }
