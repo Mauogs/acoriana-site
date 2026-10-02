@@ -61,7 +61,7 @@ body {
   color: #d5d5d5;
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
 
   padding: 9px 13px;
@@ -69,14 +69,9 @@ body {
   border-radius: 5px;
 }
 
-.menu a:hover {
-  color: white;
-  background-color: #3a3a3a;
-}
-
-.menu .ativo {
+.links:hover {
   background-color: #d69d08;
-  color: #222;
+  color: #222; 
 }
 
 .acoes {
@@ -88,7 +83,7 @@ body {
 .carrinho,
 .encomenda {
   text-decoration: none;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: bold;
   color: #ddd ;
 
@@ -123,10 +118,4 @@ body {
   justify-content: center;
 
   font-size: 9px;
-}
-
-.mini-logo {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
 }
