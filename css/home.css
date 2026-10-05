@@ -1,0 +1,298 @@
+/* ================= SEÇÃO HERO ================= */
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    min-height: 80vh;
+    background-color: var(--cor-branca);
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.tag-tradicao {
+    display: inline-block;
+    background-color: var(--cor-escura);
+    color: var(--cor-primaria);
+    font-size: 11px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    font-size: 2.3rem;
+    color: var(--cor-escura);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: var(--borda-suave);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-escura);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--cor-escura);
+    border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+    border-color: var(--cor-escura);
+    background-color: #f0f0f0;
+}
+
+.hero-features {
+    display: flex;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* ================= CONTAINER DA IMAGEM E BADGES ================= */
+
+.hero-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+}
+
+.hero-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: var(--sombra-padrao);
+}
+
+.badge {
+    position: absolute;
+    background-color: rgba(34, 34, 34, 0.92);
+    color: var(--cor-branca);
+    padding: 10px 16px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: var(--sombra-padrao);
+    z-index: 2;
+}
+
+.badge-top {
+    top: 15px;
+    left: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/* ================= SEÇÃO CATEGORIAS ================= */
+
+/* ================= SEÇÃO DE CATEGORIAS ================= */
+
+.categoria {
+    width: 100%;
+    padding: 50px 5%;
+    background-color: #f9f9f9;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Texto superior da seção */
+
+.categoria-text {
+    width: 100%;
+}
+
+.categoria-label {
+    display: block;
+
+    color: var(--cor-primaria);
+    font-size: 10px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.categoria-titulo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.categoria-titulo h2 {
+    color: var(--cor-escura);
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.categoria-titulo p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* Link "5 categorias completas" */
+
+.ver-categorias {
+    color: var(--cor-escura);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.ver-categorias:hover {
+    color: var(--cor-primaria);
+}
+
+
+/* ================= CARDS ================= */
+
+.cards {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+
+    justify-content: space-between;
+}
+
+
+/* Cada card */
+
+.card {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 18px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: var(--borda-suave);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Ícone */
+
+.card img {
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+
+/* Título */
+
+.card h3 {
+    color: var(--cor-escura);
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Descrição */
+
+.card p {
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+}
+
+
+/* Link */
+
+.card a {
+    margin-top: auto;
+
+    color: var(--cor-primaria);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: var(--cor-primaria-hover);
+}
+
+
+/* Efeito quando passa o mouse */
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--sombra-padrao);
+
+    border-color: #e5e5e5;
+}
