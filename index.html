@@ -4,15 +4,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Açoriana Conveniência</title>
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
-    <h1>Açoriana Conveniência</h1>
+    <header class="navbar">
+
+        <div class="logo-area">
+            <img src="assets/logo/logo_padaria_acoriana.png" alt="Logo da Açoriana Conveniência">
+            <div class="logo-text">
+                <strong>AÇORIANA</strong>
+                <span>CONVENIÊNCIA / PÃES ESPECIAIS</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="#" class="links">Início</a>
+            <a href="#" class="links">Produtos</a>
+            <a href="#" class="links">Sobre Nós</a>
+            <a href="#" class="links">Contato</a>
+        </nav>
+
+        <div class="acoes">
+            <a href="#" class="carrinho">
+                Carrinho
+
+                <span class="contador">0</span>
+            </a>
+
+            <a href="#" class="encomenda">
+                Fazer Encomenda
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero-section">
+
+            <!-- Coluna da Esquerda: Textos e Botões -->
+            <div class="hero-content">
+                <div class="tag-tradicao">
+                    TRADIÇÃO EM PÃES ESPECIAIS & CONVENIÊNCIA SELECIONADA
+                </div>
+
+                <h1>O sabor autêntico do pão quentinho e a praticidade que o seu dia merece.</h1>
+
+                <p>Descubra nossa linha artesanal de pães especiais de fermentação natural, confeitaria fina, salgados
+                    assados na hora e uma conveniência completa para você.</p>
+
+                <div class="hero-botoes">
+                    <a href="#" class="btn-primary">
+                        <i class="fa-solid fa-comment-dots"></i> Fazer Encomenda
+                    </a>
+                    <a href="#produtos" class="btn-secondary">
+                        <i class="fa-solid fa-store"></i> Ver Produtos
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <span><i class="fa-solid fa-circle-check" style="color: #d69d08;"></i> Fornadas quentes o dia
+                        todo</span>
+                    <span><i class="fa-solid fa-circle-check" style="color: #d69d08;"></i> Pedidos via WhatsApp</span>
+                    <span><i class="fa-solid fa-circle-check" style="color: #d69d08;"></i> Conveniência
+                        selecionada</span>
+                </div>
+            </div>
+
+            <!-- Coluna da Direita: Imagem com os "Badges" (Selos flutuantes) -->
+            <div class="hero-image-container">
+                <img src="assets/banners/Badge-Padaria-Acoriana.png" alt="Pães artesanais frescos" class="hero-img">
+
+                <!-- Selo Flutuante Topo Esquerda -->
+                <div class="badge badge-top">
+                    <span class="dot"></span> FORNADA FRESCA SAINDO AGORA
+                </div>
+
+                <div class="badge badge-bottom">
+                    <div class="badge-icon">
+                        <i class="fa-solid fa-bread-slice"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="categoria" id="produtos">
+
+        <div class="categoria-text">
+            <span class="categoria-label">SELEÇÃO ARTESANAL</span>
+
+            <div class="categoria-titulo">
+                <div>
+                    <h2>O que você procura hoje?</h2>
+                    <p>
+                        Navegue por nossas seleções preparadas diariamente
+                        com ingredientes nobres.
+                    </p>
+                </div>
+
+                <a href="produtos.html" class="ver-categorias">
+                    5 categorias completas →
+                </a>
+            </div>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="assets/icones/icon-pao.png" alt="Pães especiais">
+
+                <h3>Pães Especiais</h3>
+
+                <p>
+                    Sourdough, francês tradicional, ciabatta e baguetes
+                    de fermentação natural.
+                </p>
+
+                <a href="produtos.html">Ver opções →</a>
+            </div>
+
+            <div class="card">
+                <img src="assets/icones/icon-confeitaria.png" alt="Confeitaria">
+
+                <h3>Confeitaria & Bolos</h3>
+
+                <p>
+                    Bolos caseiros, tortas artesanais, sonhos recheados
+                    e doces finos.
+                </p>
+
+                <a href="produtos.html">Ver opções →</a>
+            </div>
+
+            <div class="card">
+                <img src="assets/icones/icon-salgados.png" alt="Salgados">
+
+                <h3>Salgados & Folhados</h3>
+
+                <p>
+                    Croissants amanteigados, empadas nobres, quiches
+                    e folhados gourmet.
+                </p>
+
+                <a href="produtos.html">Ver opções →</a>
+            </div>
+
+            <div class="card">
+                <img src="assets/icones/icon-cafeteria.png" alt="Cafeteria">
+
+                <h3>Cafeteria & Bebidas</h3>
+
+                <p>
+                    Cafés especiais moídos na hora, sucos naturais
+                    e laticínios frescos.
+                </p>
+
+                <a href="produtos.html">Ver opções →</a>
+            </div>
+
+            <div class="card">
+                <img src="assets/icones/icon-conveniencia.png" alt="Conveniência">
+
+                <h3>Conveniência Fina</h3>
+
+                <p>
+                    Vinhos, queijos nobres, antepastos artesanais
+                    e itens de mercearia premium.
+                </p>
+
+                <a href="produtos.html">Ver opções →</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="favoritos">
+
+        <div class="favoritos-cabecalho">
+
+            <span class="favoritos-label">MAIS PEDIDOS</span>
+
+            <h2>Favoritos da Açoriana</h2>
+
+            <p>
+                Uma amostra dos pães especiais e delícias que você pode encomendar com facilidade.
+            </p>
+
+        </div>
+
+
+        <div class="produtos-destaque">
+
+            <!-- PRODUTO 1 -->
+            <article class="produto-card">
+
+                <div class="produto-imagem">
+
+                    <img src="assets/produtos/pao-rustico.jpg" alt="Pão Rústico de Fermentação Natural">
+
+                    <span class="produto-badge">
+                        Fermentação 24h
+                    </span>
+
+                </div>
+
+                <div class="produto-info">
+
+                    <h3>Pão Rústico de Fermentação Natural</h3>
+
+                    <p class="produto-descricao">
+                        Casca crocante dourada, miolo incrivelmente aerado
+                        e aroma marcante.
+                    </p>
+
+                    <div class="produto-preco">
+
+                        <span>Unidade (aprox. 500g)</span>
+
+                        <strong>R$ 24,90</strong>
+
+                    </div>
+
+                    <button class="btn-produto">
+                        + Adicionar à Encomenda
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 2 -->
+            <article class="produto-card">
+
+                <div class="produto-imagem">
+
+                    <img src="assets/produtos/croissant-tradicional.jpg" alt="Croissant Tradicional Amanteigado">
+
+                    <span class="produto-badge">
+                        Pura Manteiga
+                    </span>
+
+                </div>
+
+                <div class="produto-info">
+
+                    <h3>Croissant Tradicional Amanteigado</h3>
+
+                    <p class="produto-descricao">
+                        Massa folhada francesa pura manteiga,
+                        textura levíssima e crocância inigualável.
+                    </p>
+
+                    <div class="produto-preco">
+
+                        <span>Unidade</span>
+
+                        <strong>R$ 14,50</strong>
+
+                    </div>
+
+                    <button class="btn-produto">
+                        + Adicionar à Encomenda
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 3 -->
+            <article class="produto-card">
+
+                <div class="produto-imagem">
+
+                    <img src="assets/produtos/bolo-cenoura.webp" alt="Bolo de Cenoura com Ganache">
+
+                    <span class="produto-badge">
+                        Chocolate Belga
+                    </span>
+
+                </div>
+
+                <div class="produto-info">
+
+                    <h3>Bolo de Cenoura com Ganache</h3>
+
+                    <p class="produto-descricao">
+                        Extremamente fofinho, coberto com
+                        camadas generosas de ganache de chocolate.
+                    </p>
+
+                    <div class="produto-preco">
+
+                        <span>Aprox. 700g</span>
+
+                        <strong>R$ 38,00</strong>
+
+                    </div>
+
+                    <button class="btn-produto">
+                        + Adicionar à Encomenda
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 4 -->
+            <article class="produto-card">
+
+                <div class="produto-imagem">
+
+                    <img src="assets/produtos/cesta-cafe.webp" alt="Cesta Café da Manhã Especial">
+
+                    <span class="produto-badge">
+                        Kit Especial
+                    </span>
+
+                </div>
+
+                <div class="produto-info">
+
+                    <h3>Cesta Café da Manhã Especial</h3>
+
+                    <p class="produto-descricao">
+                        Sortimento nobre com baguetes, mini croissants,
+                        pães rústicos e queijos artesanais.
+                    </p>
+
+                    <div class="produto-preco">
+
+                        <span>Serve 2–4 pessoas</span>
+
+                        <strong>R$ 89,00</strong>
+
+                    </div>
+
+                    <button class="btn-produto btn-encomendar">
+                        Encomendar Agora
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
 
     <script src="js/main.js"></script>
+
 </body>
+
+</html>
 
 </html>

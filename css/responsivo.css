@@ -1,0 +1,73 @@
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 900px) {
+
+    .cards {
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 15px);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .categoria {
+        padding: 40px 20px;
+    }
+
+    .categoria-titulo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+}
+
+/* ================= FAVORITOS ================= */
+
+@media (max-width: 900px) {
+
+    .produtos-destaque {
+        flex-wrap: wrap;
+    }
+
+    .produto-card {
+        flex: 1 1 calc(50% - 15px);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .favoritos {
+        padding: 40px 20px;
+    }
+
+    .favoritos-cabecalho h2 {
+        font-size: 24px;
+    }
+
+    .produtos-destaque {
+        flex-direction: column;
+    }
+
+    .produto-card {
+        width: 100%;
+    }
+
+    .produto-imagem {
+        height: 190px;
+    }
+
+}
