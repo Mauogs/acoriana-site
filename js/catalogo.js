@@ -1,28 +1,30 @@
 const listaProdutos = document.querySelector(".lista-produtos");
 
-produtos.forEach((produto) => {
-    const card = document.createElement("div");
-    card.classList.add("card-produto");
+if (listaProdutos) {
+    produtos.forEach((produto) => {
+        const card = document.createElement("div");
+        card.classList.add("card-produto");
 
-    card.innerHTML = `
-        <img src="${produto.imagem}" alt="${produto.nome}">
+        card.innerHTML = `
+            <img src="${produto.imagem}" alt="${produto.nome}">
 
-        <div class="produto-info">
-            <span class="produto-categoria">${produto.categoria}</span>
+            <div class="produto-info">
+                <span class="produto-categoria">${produto.categoria}</span>
 
-            <h3>${produto.nome}</h3>
+                <h3>${produto.nome}</h3>
 
-            <p>${produto.descricao}</p>
+                <p>${produto.descricao}</p>
 
-            <div class="produto-footer">
-                <strong>R$ ${produto.preco.toFixed(2).replace(".", ",")}</strong>
+                <div class="produto-footer">
+                    <strong>R$ ${produto.preco.toFixed(2).replace(".", ",")}</strong>
 
-                <button class="btn-adicionar">
-                    Adicionar
-                </button>
+                    <button class="btn-adicionar">
+                        Adicionar
+                    </button>
+                </div>
             </div>
-        </div>
-    `;
+        `;
 
-    listaProdutos.appendChild(card);
-});
+        listaProdutos.appendChild(card);
+    });
+}
