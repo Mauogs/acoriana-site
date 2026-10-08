@@ -53,6 +53,7 @@ function renderizarProdutos() {
         const quantidade = card.querySelector(".quantidade");
         const diminuir = card.querySelector(".diminuir");
         const aumentar = card.querySelector(".aumentar");
+        const botaoAdicionar = card.querySelector(".btn-adicionar");
 
         let valorQuantidade = 1;
 
@@ -66,6 +67,10 @@ function renderizarProdutos() {
         aumentar.addEventListener("click", () => {
             valorQuantidade++;
             quantidade.textContent = valorQuantidade;
+        });
+
+        botaoAdicionar.addEventListener("click", () => {
+            adicionarAoCarrinho(produto, valorQuantidade);
         });
 
         listaProdutos.appendChild(card);
