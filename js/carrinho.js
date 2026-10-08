@@ -43,6 +43,20 @@ function formatarPreco(preco) {
     return `R$ ${preco.toFixed(2).replace(".", ",")}`;
 }
 
+function atualizarResumo() {
+    const subtotal = carrinho.reduce(
+        (total, produto) => total + produto.preco * produto.quantidade,
+        0
+    );
+
+    const valoresResumo = document.querySelectorAll(".resumo-linha strong");
+
+    if (valoresResumo.length >= 2) {
+        valoresResumo[0].textContent = formatarPreco(subtotal);
+        valoresResumo[1].textContent = formatarPreco(subtotal);
+    }
+}
+
 function renderizarCarrinho() {
     const listaCarrinho = document.querySelector(".lista-carrinho");
 
@@ -80,8 +94,43 @@ function renderizarCarrinho() {
             </button>
         `;
 
+        const quantidade = item.querySelector(".quantidade");
+        const subtotal = item.querySelector(".item-subtotal");
+        const diminuir = item.querySelector(".diminuir");
+        const aumentar = item.querySelector(".aumentar");
+
+        diminuir.addEventListener("click", () => {
+            if (produto.quantidade > 1) {
+                produto.quantidade--;
+
+                quantidade.textContent = produto.quantidade;
+                subtotal.textContent = formatarPreco(
+                    produto.preco * produto.quantidade
+                );
+
+                salvarCarrinho();
+                atualizarContador();
+                atualizarResumo();
+            }
+        });
+
+        aumentar.addEventListener("click", () => {
+            produto.quantidade++;
+
+            quantidade.textContent = produto.quantidade;
+            subtotal.textContent = formatarPreco(
+                produto.preco * produto.quantidade
+            );
+
+            salvarCarrinho();
+            atualizarContador();
+            atualizarResumo();
+        });
+
         listaCarrinho.appendChild(item);
     });
+
+    atualizarResumo();
 }
 
 atualizarContador();
