@@ -10,58 +10,57 @@
   </head>
   <body>
     <header class="navbar">
-        <div class="logo-area">
-            <img
-            src="assets/logo/logo_padaria_acoriana.png"
-            alt="Logo da Açoriana Conveniência"
-            />
-            <div class="logo-text">
-                <strong>AÇORIANA</strong> <span>CONVENIÊNCIA / PÃES ESPECIAIS</span>
-            </div>
+      <div class="logo-area">
+        <img
+          src="assets/logo/logo_padaria_acoriana.png"
+          alt="Logo da Açoriana Conveniência"
+        />
+        <div class="logo-text">
+          <strong>AÇORIANA</strong> <span>CONVENIÊNCIA / PÃES ESPECIAIS</span>
         </div>
-            <nav class="menu">
-            <a href="#" class="links">Início</a>
-            <a href="catalogo.html" class="links">Catálogo</a>
-            <a href="#" class="links">Sobre Nós</a>
-            <a href="#" class="links">Contato</a>
-        </nav>
-        <div class="acoes">
-            <a href="carrinho.html" class="carrinho">
-                Carrinho <span class="contador">0</span>
-            </a>
-            <a href="#" class="encomenda"> Fazer Encomenda </a>
-        </div>
+      </div>
+      <nav class="menu">
+        <a href="#" class="links">Início</a>
+        <a href="catalogo.html" class="links">Catálogo</a>
+        <a href="#" class="links">Sobre Nós</a>
+        <a href="#" class="links">Contato</a>
+      </nav>
+      <div class="acoes">
+        <a href="carrinho.html" class="carrinho">
+          Carrinho <span class="contador">0</span>
+        </a>
+        <a href="#" class="encomenda"> Fazer Encomenda </a>
+      </div>
     </header>
     <main class="catalogo">
-        <section class="catalogo-header">
-            <span class="tag-tradicao">Nossos produtos</span>
-            <h1>Catálogo</h1>
-            <p>
-            Confira nossos pães, doces, salgados e outras delícias preparadas
-            especialmente para você.
-            </p>
-        </section>
-        <section class="catalogo-filtros">
-                <div class="busca">
-                    <input
-                        type="search"
-                        id="campo-busca"
-                        placeholder="Buscar produto..."
-                        aria-label="Buscar produto"
-                    />
-                </div>
-                <div class="categorias">
-                    <button class="filtro ativo" data-categoria="Todos">Todos</button>
-                    <button class="filtro" data-categoria="Pães">Pães</button>
-                    <button class="filtro" data-categoria="Pães Especiais">
-                        Pães Especiais
-                    </button>
-                    <button class="filtro" data-categoria="Doces">Doces</button>
-                    <button class="filtro" data-categoria="Salgados">Salgados</button>
-                    <button class="filtro" data-categoria="Bolos">Bolos</button>
-                </div>
-        </section>
-        <section class="produtos"><div class="lista-produtos"></div></section>
+      <section class="catalogo-header">
+        <span class="tag-tradicao">Nossos produtos</span>
+        <h1>Catálogo</h1>
+        <p>
+          Confira nossos pães, doces, salgados e outras delícias preparadas
+          especialmente para você.
+        </p>
+      </section>
+      <section class="catalogo-filtros">
+        <div class="busca">
+          <input
+            type="search"
+            id="campo-busca"
+            placeholder="Buscar produto..."
+            aria-label="Buscar produto"
+          />
+        </div>
+        <div class="categorias">
+            <button class="filtro ativo" data-categoria="Todos">Todos</button>
+            <button class="filtro" data-categoria="Pães">Pães</button>
+            <button class="filtro" data-categoria="Pães Especiais">Pães Especiais</button>
+            <button class="filtro" data-categoria="Doces">Doces</button>
+            <button class="filtro" data-categoria="Salgados">Salgados</button>
+            <button class="filtro" data-categoria="Bolos">Bolos</button>
+            <button class="filtro" data-categoria="Pratos Especiais">Pratos Especiais</button>
+        </div>
+      </section>
+      <section class="produtos"><div class="lista-produtos"></div></section>
     </main>
     <script src="js/produtos.js"></script>
     <script src="js/carrinho.js"></script>
