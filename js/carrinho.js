@@ -69,12 +69,40 @@ function removerDoCarrinho(nomeProduto) {
 
 function renderizarCarrinho() {
     const listaCarrinho = document.querySelector(".lista-carrinho");
+    const resumoCarrinho = document.querySelector(".resumo-carrinho");
 
     if (!listaCarrinho) {
         return;
     }
 
     listaCarrinho.innerHTML = "";
+
+    if (carrinho.length === 0) {
+        listaCarrinho.innerHTML = `
+            <div class="carrinho-vazio">
+                <h2>Seu carrinho está vazio</h2>
+
+                <p>
+                    Adicione alguns produtos ao seu carrinho
+                    para continuar.
+                </p>
+
+                <a href="catalogo.html" class="btn-voltar-catalogo">
+                    Voltar ao Catálogo
+                </a>
+            </div>
+        `;
+
+        if (resumoCarrinho) {
+            resumoCarrinho.style.display = "none";
+        }
+
+        return;
+    }
+
+    if (resumoCarrinho) {
+        resumoCarrinho.style.display = "";
+    }
 
     carrinho.forEach((produto) => {
         const item = document.createElement("div");
