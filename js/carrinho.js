@@ -39,4 +39,50 @@ function adicionarAoCarrinho(produto, quantidade) {
     atualizarContador();
 }
 
+function formatarPreco(preco) {
+    return `R$ ${preco.toFixed(2).replace(".", ",")}`;
+}
+
+function renderizarCarrinho() {
+    const listaCarrinho = document.querySelector(".lista-carrinho");
+
+    if (!listaCarrinho) {
+        return;
+    }
+
+    listaCarrinho.innerHTML = "";
+
+    carrinho.forEach((produto) => {
+        const item = document.createElement("div");
+        item.classList.add("item-carrinho");
+
+        item.innerHTML = `
+            <img src="${produto.imagem}" alt="${produto.nome}">
+
+            <div class="item-info">
+                <span class="item-categoria">${produto.categoria}</span>
+                <h3>${produto.nome}</h3>
+                <span class="item-preco">${formatarPreco(produto.preco)}</span>
+            </div>
+
+            <div class="item-controle">
+                <button class="btn-quantidade diminuir">-</button>
+                <span class="quantidade">${produto.quantidade}</span>
+                <button class="btn-quantidade aumentar">+</button>
+            </div>
+
+            <strong class="item-subtotal">
+                ${formatarPreco(produto.preco * produto.quantidade)}
+            </strong>
+
+            <button class="btn-remover">
+                Remover
+            </button>
+        `;
+
+        listaCarrinho.appendChild(item);
+    });
+}
+
 atualizarContador();
+renderizarCarrinho();
