@@ -78,6 +78,11 @@ function renderizarCarrinho() {
     listaCarrinho.innerHTML = "";
 
     if (carrinho.length === 0) {
+        const carrinhoConteudo = document.querySelector(".carrinho-conteudo");
+
+        if (carrinhoConteudo) {
+            carrinhoConteudo.classList.add("vazio");
+        }
         listaCarrinho.innerHTML = `
             <div class="carrinho-vazio">
                 <h2>Seu carrinho está vazio</h2>
@@ -102,6 +107,11 @@ function renderizarCarrinho() {
 
     if (resumoCarrinho) {
         resumoCarrinho.style.display = "";
+    }
+    const carrinhoConteudo = document.querySelector(".carrinho-conteudo");
+
+    if (carrinhoConteudo) {
+        carrinhoConteudo.classList.remove("vazio");
     }
 
     carrinho.forEach((produto) => {

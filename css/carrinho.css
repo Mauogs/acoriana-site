@@ -34,10 +34,15 @@
     align-items: start;
 }
 
+.carrinho-conteudo.vazio {
+    display: block;
+}
+
 .lista-carrinho {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 
 .item-carrinho {
@@ -216,6 +221,50 @@
     border-color: var(--cor-primaria);
 }
 
+.carrinho-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 300px;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: var(--cor-branca);
+    border-radius: var(--borda-suave);
+    box-shadow: var(--sombra-padrao);
+    text-align: center;
+}
+
+.carrinho-vazio h2 {
+    margin-bottom: 10px;
+    color: var(--cor-escura);
+    font-size: 1.5rem;
+}
+
+.carrinho-vazio p {
+    max-width: 450px;
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.btn-voltar-catalogo {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: var(--borda-suave);
+    background-color: var(--cor-primaria);
+    color: var(--cor-escura);
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar-catalogo:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
 @media (max-width: 900px) {
     .carrinho-conteudo {
         grid-template-columns: 1fr;
@@ -257,46 +306,4 @@
     .item-subtotal {
         margin-left: auto;
     }
-}
-
-.carrinho-vazio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    padding: 40px;
-    background-color: var(--cor-branca);
-    border-radius: var(--borda-suave);
-    box-shadow: var(--sombra-padrao);
-    text-align: center;
-}
-
-.carrinho-vazio h2 {
-    margin-bottom: 10px;
-    color: var(--cor-escura);
-    font-size: 1.5rem;
-}
-
-.carrinho-vazio p {
-    max-width: 450px;
-    margin-bottom: 25px;
-    color: #666;
-    line-height: 1.5;
-}
-
-.btn-voltar-catalogo {
-    display: inline-block;
-    padding: 12px 20px;
-    border-radius: var(--borda-suave);
-    background-color: var(--cor-primaria);
-    color: var(--cor-escura);
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn-voltar-catalogo:hover {
-    background-color: var(--cor-primaria-hover);
 }
