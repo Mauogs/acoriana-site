@@ -38,3 +38,5 @@ function adicionarAoCarrinho(produto, quantidade) {
     salvarCarrinho();
     atualizarContador();
 }
+
+atualizarContador();
