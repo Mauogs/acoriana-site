@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho | Açoriana</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsivo.css" />
+    <link rel="stylesheet" href="css/carrinho.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo-area">
+        <img
+          src="assets/logo/logo_padaria_acoriana.png"
+          alt="Logo da Açoriana Conveniência"
+        >
+
+        <div class="logo-text">
+          <strong>AÇORIANA</strong>
+          <span>CONVENIÊNCIA / PÃES ESPECIAIS</span>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <a href="#" class="links">Início</a>
+        <a href="catalogo.html" class="links">Catálogo</a>
+        <a href="#" class="links">Sobre Nós</a>
+        <a href="#" class="links">Contato</a>
+      </nav>
+
+      <div class="acoes">
+        <a href="carrinho.html" class="carrinho">
+          Carrinho
+          <span class="contador">0</span>
+        </a>
+
+        <a href="#" class="encomenda">
+          Fazer Encomenda
+        </a>
+      </div>
+    </header>
+
+    <main class="carrinho-pagina">
+      <section class="carrinho-header">
+        <span class="tag-tradicao">Seu pedido</span>
+
+        <h1>Carrinho</h1>
+
+        <p>
+          Confira os produtos selecionados e revise seu pedido antes de
+          finalizar.
+        </p>
+      </section>
+
+      <section class="carrinho-conteudo">
+        <div class="lista-carrinho"></div>
+
+        <aside class="resumo-carrinho">
+          <h2>Resumo do pedido</h2>
+
+          <div class="resumo-linha">
+            <span>Subtotal</span>
+            <strong>R$ 0,00</strong>
+          </div>
+
+          <div class="resumo-linha total">
+            <span>Total</span>
+            <strong>R$ 0,00</strong>
+          </div>
+
+          <button class="btn-finalizar">
+            Finalizar pedido
+          </button>
+
+          <a href="catalogo.html" class="btn-continuar">
+            Continuar comprando
+          </a>
+        </aside>
+      </section>
+    </main>
+
+    <script src="js/carrinho.js"></script>
+  </body>
+</html>

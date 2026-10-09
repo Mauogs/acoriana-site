@@ -37,12 +37,41 @@ function renderizarProdutos() {
                 <div class="produto-footer">
                     <strong>R$ ${produto.preco.toFixed(2).replace(".", ",")}</strong>
 
+                    <div class="controle-quantidade">
+                        <button class="btn-quantidade diminuir">-</button>
+                        <span class="quantidade">1</span>
+                        <button class="btn-quantidade aumentar">+</button>
+                    </div>
+
                     <button class="btn-adicionar">
                         Adicionar
                     </button>
                 </div>
             </div>
         `;
+
+        const quantidade = card.querySelector(".quantidade");
+        const diminuir = card.querySelector(".diminuir");
+        const aumentar = card.querySelector(".aumentar");
+        const botaoAdicionar = card.querySelector(".btn-adicionar");
+
+        let valorQuantidade = 1;
+
+        diminuir.addEventListener("click", () => {
+            if (valorQuantidade > 1) {
+                valorQuantidade--;
+                quantidade.textContent = valorQuantidade;
+            }
+        });
+
+        aumentar.addEventListener("click", () => {
+            valorQuantidade++;
+            quantidade.textContent = valorQuantidade;
+        });
+
+        botaoAdicionar.addEventListener("click", () => {
+            adicionarAoCarrinho(produto, valorQuantidade);
+        });
 
         listaProdutos.appendChild(card);
     });
