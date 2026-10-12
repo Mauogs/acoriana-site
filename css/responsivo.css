@@ -33,6 +33,7 @@
 
 }
 
+
 /* ================= FAVORITOS ================= */
 
 @media (max-width: 900px) {
@@ -70,4 +71,25 @@
         height: 190px;
     }
 
+}
+
+
+/* NOVAS CORES DA PÁGINA */
+
+.categoria {
+    background-color: #e9d4af;
+}
+
+.favoritos {
+    background-color: #f4e5cc;
+}
+
+.categoria .card,
+.favoritos .produto-card {
+    background-color: #ffffff;
+}
+
+.hero-section,
+.sobre-nos {
+    background-color: #ffffff;
 }

@@ -1,135 +1,320 @@
-/* ================= SEÇÃO HERO ================= */
+/* ================= HERO SECTION ================= */
 
 .hero-section {
-    display: flex;
+    width: 100%;
+    min-height: 600px;
+    padding: 55px 5%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     align-items: center;
-    justify-content: space-between;
-    padding: 60px 5%;
-    min-height: 80vh;
+    gap: clamp(35px, 6vw, 100px);
+
     background-color: var(--cor-branca);
-    gap: 40px;
 }
 
+/* ================= CONTEÚDO ================= */
+
 .hero-content {
-    flex: 1;
-    max-width: 550px;
+    width: 100%;
+    max-width: 680px;
+    min-width: 0;
 }
+
+/* ================= ETIQUETA ================= */
 
 .tag-tradicao {
     display: inline-block;
+
     background-color: var(--cor-escura);
     color: var(--cor-primaria);
-    font-size: 11px;
-    font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-bottom: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    padding: 9px 16px;
+    border-radius: 30px;
+
+    margin-bottom: 25px;
+
     text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
+
+/* ================= TÍTULO ================= */
 
 .hero-content h1 {
-    font-size: 2.3rem;
     color: var(--cor-escura);
-    line-height: 1.2;
-    margin-bottom: 20px;
+
+    font-size: clamp(32px, 3.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+
+    margin: 0 0 24px;
 }
 
+/* ================= DESCRIÇÃO ================= */
+
 .hero-content p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 30px;
-    line-height: 1.5;
+    color: #555555;
+
+    font-size: clamp(16px, 1.1vw, 19px);
+    font-weight: 400;
+    line-height: 1.7;
+
+    margin: 0 0 32px;
+    max-width: 620px;
 }
+
+/* ================= BOTÕES ================= */
 
 .hero-botoes {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
     margin-bottom: 30px;
 }
 
-.btn-primary,
-.btn-secondary {
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: var(--borda-suave);
-    font-weight: bold;
-    display: flex;
+.hero-botoes .btn-primary,
+.hero-botoes .btn-secondary {
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    transition: all 0.3s;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 52px;
+    padding: 14px 24px;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-decoration: none;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
 }
 
-.btn-primary {
+.hero-botoes .btn-primary {
     background-color: var(--cor-primaria);
     color: var(--cor-escura);
 }
 
-.btn-primary:hover {
+.hero-botoes .btn-primary:hover {
     background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
 }
 
-.btn-secondary {
-    background-color: transparent;
+.hero-botoes .btn-secondary {
+    background-color: #ffffff;
     color: var(--cor-escura);
-    border: 1px solid #ccc;
+    border: 1px solid #d5d5d5;
 }
 
-.btn-secondary:hover {
+.hero-botoes .btn-secondary:hover {
+    background-color: #f5f5f5;
     border-color: var(--cor-escura);
-    background-color: #f0f0f0;
+    transform: translateY(-2px);
 }
+
+/* ================= BENEFÍCIOS ================= */
 
 .hero-features {
     display: flex;
-    gap: 20px;
-    font-size: 0.85rem;
-    color: #666;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+
+    color: #555555;
+    font-size: 14px;
     font-weight: 500;
 }
 
-/* ================= CONTAINER DA IMAGEM E BADGES ================= */
+.hero-features span {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 7px;
+
+    max-width: 190px;
+    line-height: 1.5;
+}
+
+.hero-features i {
+    color: #d69d08;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* ================= IMAGEM ================= */
 
 .hero-image-container {
-    flex: 1;
+    width: 100%;
+    max-width: 530px;
+    min-width: 0;
+
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 450px;
+
+    justify-self: end;
 }
+
+/* Imagem inteira, sem recortar o conteúdo */
 
 .hero-img {
+    display: block;
     width: 100%;
-    max-height: 500px;
+    height: auto;
+    max-height: 560px;
+
     object-fit: contain;
-    border-radius: 20px;
-    box-shadow: var(--sombra-padrao);
+
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-.badge {
+/* ================= BADGES ================= */
+
+.hero-image-container .badge {
     position: absolute;
-    background-color: rgba(34, 34, 34, 0.92);
-    color: var(--cor-branca);
-    padding: 10px 16px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: var(--sombra-padrao);
     z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: rgba(34, 34, 34, 0.94);
+    color: #ffffff;
+
+    padding: 11px 16px;
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
-.badge-top {
+.hero-image-container .badge-top {
     top: 15px;
     left: 15px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 20px;
 }
 
-/* ================= SEÇÃO CATEGORIAS ================= */
+.hero-image-container .badge-bottom {
+    bottom: 15px;
+    right: 15px;
+}
 
-/* ================= SEÇÃO DE CATEGORIAS ================= */
+/* ================= TABLETS ================= */
+
+@media (max-width: 1024px) {
+    .hero-section {
+        min-height: auto;
+        padding: 60px 5%;
+        gap: 35px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(30px, 3.5vw, 40px);
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-image-container {
+        max-width: 420px;
+    }
+
+    .hero-features {
+        font-size: 13px;
+        gap: 12px;
+    }
+}
+
+/* ================= CELULARES ================= */
+
+@media (max-width: 768px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+        padding: 45px 5% 55px;
+        gap: 35px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .tag-tradicao {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(29px, 7vw, 38px);
+        letter-spacing: -0.6px;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        line-height: 1.65;
+        margin-bottom: 26px;
+    }
+
+    .hero-botoes {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .hero-features {
+        gap: 12px 20px;
+        font-size: 13px;
+    }
+
+    .hero-image-container {
+        justify-self: center;
+        max-width: 450px;
+    }
+
+    .hero-img {
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 35px 5% 45px;
+    }
+
+    .hero-botoes .btn-primary,
+    .hero-botoes .btn-secondary {
+        flex: 1;
+        padding: 13px 10px;
+        font-size: 13px;
+    }
+
+    .hero-features span {
+        max-width: none;
+    }
+
+    .hero-image-container .badge-top {
+        top: 10px;
+        left: 10px;
+        font-size: 9px;
+        padding: 9px 12px;
+    }
+}
+
+
+/* ================= SEÇÃO CATEGORIAS ================= */
 
 .categoria {
     width: 100%;
@@ -542,4 +727,598 @@
 
 .btn-encomendar:hover {
     background-color: #333333;
+}
+
+/* ================= SOBRE NÓS ================= */
+
+
+/* ================= SOBRE NÓS ================= */
+
+.sobre-nos {
+    width: 100%;
+    padding: 35px 3.5%;
+    background-color: #ffffff;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 16px;
+}
+
+/* ================= COLUNA ESQUERDA ================= */
+
+.sobre-nos-conteudo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+/* ================= CABEÇALHO ================= */
+
+.sobre-nos-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sobre-nos-logo {
+    width: 68px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.sobre-nos-titulo {
+    flex: 1;
+    min-width: 0;
+}
+
+.sobre-nos-titulo span {
+    display: block;
+    color: #a87500;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.sobre-nos-titulo h2 {
+    color: var(--cor-escura);
+    font-size: clamp(20px, 2.7vw, 28px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+/* ================= TEXTO ================= */
+
+.sobre-nos-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sobre-nos-body p {
+    color: #64606a;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.15px;
+    margin: 0;
+}
+
+.sobre-nos-body strong {
+    color: #49444d;
+    font-weight: 700;
+}
+
+/* ================= CARDS ================= */
+
+.sobre-nos-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.sobre-nos-card {
+    min-width: 0;
+    background-color: #faf8f7;
+    border: 1px solid #f5f2f0;
+    border-radius: 10px;
+    padding: 12px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+.sobre-nos-card h3 {
+    color: #936400;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 3px;
+}
+
+.sobre-nos-card strong {
+    color: #292929;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.sobre-nos-card span {
+    color: #77717b;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* ================= IMAGEM DIREITA ================= */
+
+.sobre-nos-imagem {
+    position: relative;
+    min-width: 0;
+    min-height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10);
+}
+
+.sobre-nos-imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 48%,
+            rgba(0, 0, 0, 0.72) 100%);
+    pointer-events: none;
+}
+
+.sobre-nos-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ================= TEXTO SOBRE A IMAGEM ================= */
+
+.sobre-nos-imagem-texto {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 1;
+}
+
+.sobre-nos-imagem-texto h3 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 5px;
+}
+
+.sobre-nos-imagem-texto span {
+    color: #f5ca74;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 768px) {
+    .sobre-nos {
+        grid-template-columns: 1fr;
+        padding: 35px 5%;
+        gap: 24px;
+    }
+
+    .sobre-nos-titulo h2 {
+        font-size: 24px;
+    }
+
+    .sobre-nos-body p {
+        font-size: 13px;
+    }
+
+    .sobre-nos-imagem {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sobre-nos-header {
+        align-items: flex-start;
+    }
+
+    .sobre-nos-logo {
+        width: 60px;
+    }
+
+    .sobre-nos-titulo h2 {
+        font-size: 21px;
+    }
+
+    .sobre-nos-cards {
+        gap: 6px;
+    }
+
+    .sobre-nos-card {
+        padding: 12px 8px;
+    }
+
+    .sobre-nos-card h3 {
+        font-size: 20px;
+    }
+
+    .sobre-nos-card strong {
+        font-size: 8px;
+    }
+
+    .sobre-nos-card span {
+        font-size: 8px;
+    }
+
+    .sobre-nos-imagem {
+        min-height: 300px;
+    }
+}
+
+
+/* ================= RODAPÉ ================= */
+
+.footer {
+    width: 100%;
+    background-color: #2d2d2d;
+    color: #ffffff;
+
+    padding: 35px 5% 15px;
+
+    font-size: 12px;
+}
+
+/* ================= CONTAINER ================= */
+
+.footer-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1.15fr;
+
+    gap: 45px;
+}
+
+/* ================= COLUNAS ================= */
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    margin: 0 0 5px;
+}
+
+/* ================= LOGO ================= */
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 85px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-logo strong {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ================= DESCRIÇÃO ================= */
+
+.footer-identidade p {
+    color: #eeeeee;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 270px;
+    margin: 0;
+}
+
+/* ================= REDES ================= */
+
+.footer-redes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.footer-redes a {
+    color: #f1b935;
+    font-size: 17px;
+
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-redes a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ================= NAVEGAÇÃO ================= */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: #f5f5f5;
+    font-size: 12px;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f1b935;
+}
+
+/* ================= HORÁRIOS ================= */
+
+.footer-horario {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.horario-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.horario-item i {
+    color: #f1b935;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.horario-item span {
+    color: #eeeeee;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.horario-item strong {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ================= CONTATO ================= */
+
+.footer-contato {
+    gap: 7px;
+}
+
+.footer-contato address {
+    font-style: normal;
+    color: #eeeeee;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.footer-contato>a:not(.footer-whatsapp) {
+    color: #eeeeee;
+    font-size: 12px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.footer-contato>a:hover {
+    color: #f1b935;
+}
+
+/* ================= WHATSAPP ================= */
+
+.footer-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background-color: #e5aa1b;
+    color: #252525 !important;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    margin-top: 5px;
+
+    transition: all 0.3s ease;
+}
+
+.footer-whatsapp:hover {
+    background-color: #f1bd3b;
+    transform: translateY(-2px);
+}
+
+/* ================= BARRA INFERIOR ================= */
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 35px auto 0;
+    padding-top: 15px;
+
+    border-top: 1px solid #494949;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #dddddd;
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-legal a {
+    color: #eeeeee;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-legal a:hover {
+    color: #f1b935;
+}
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 1000px) {
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+}
+
+/* ================= CELULARES ================= */
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 35px 6% 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 18px;
+    }
+
+    .footer-col h3 {
+        font-size: 11px;
+    }
+
+    .footer-logo {
+        flex-wrap: wrap;
+    }
+
+    .footer-logo img {
+        width: 65px;
+    }
+
+    .footer-logo strong {
+        font-size: 14px;
+    }
+
+    .footer-identidade p,
+    .footer-links a,
+    .horario-item span,
+    .footer-contato address,
+    .footer-contato>a:not(.footer-whatsapp) {
+        font-size: 11px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .footer-bottom p,
+    .footer-legal a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== CORES DAS SEÇÕES ===== */
+
+/* Hero - branco */
+.hero-section {
+    background-color: #ffffff;
+}
+
+/* Categorias - cinza suave */
+.categoria {
+    background-color: #f5f5f5;
+}
+
+/* Favoritos - creme artesanal */
+.favoritos {
+    background-color: #fff5e6;
+}
+
+/* Cards continuam brancos para criar contraste */
+.favoritos .produto-card {
+    background-color: #ffffff;
+    border: 1px solid #f0e4d5;
+}
+
+/* Cabeçalho dos favoritos */
+.favoritos-label {
+    color: #a87500;
+}
+
+.favoritos-cabecalho h2 {
+    color: #292929;
+}
+
+/* Sobre Nós - branco */
+.sobre-nos {
+    background-color: #ffffff;
+}
+
+/* Rodapé - grafite */
+.footer {
+    background-color: #2d2d2d;
 }
