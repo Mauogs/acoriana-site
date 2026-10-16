@@ -1,3 +1,5 @@
+
+/* .carrinho-pagina : dimensões e espaçamentos. */
 .carrinho-pagina {
     width: 90%;
     max-width: 1200px;
@@ -5,21 +7,29 @@
     padding: 60px 0;
 }
 
+
+/* .carrinho-header : dimensões e espaçamentos, tipografia. */
 .carrinho-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
+
+/* .carrinho-header .tag-tradicao : dimensões e espaçamentos. */
 .carrinho-header .tag-tradicao {
     margin-bottom: 15px;
 }
 
+
+/* .carrinho-header h1 : dimensões e espaçamentos, aparência visual, tipografia. */
 .carrinho-header h1 {
     margin-bottom: 12px;
     color: var(--cor-escura);
     font-size: 2.5rem;
 }
 
+
+/* .carrinho-header p : dimensões e espaçamentos, aparência visual, tipografia. */
 .carrinho-header p {
     max-width: 600px;
     margin: 0 auto;
@@ -27,6 +37,8 @@
     line-height: 1.5;
 }
 
+
+/* .carrinho-conteudo : organização dos elementos, dimensões e espaçamentos. */
 .carrinho-conteudo {
     display: grid;
     grid-template-columns: 1fr 350px;
@@ -34,10 +46,14 @@
     align-items: start;
 }
 
+
+/* .carrinho-conteudo.vazio : organização dos elementos. */
 .carrinho-conteudo.vazio {
     display: block;
 }
 
+
+/* .lista-carrinho : organização dos elementos, dimensões e espaçamentos. */
 .lista-carrinho {
     display: flex;
     flex-direction: column;
@@ -45,6 +61,8 @@
     width: 100%;
 }
 
+
+/* .item-carrinho : organização dos elementos, dimensões e espaçamentos, aparência visual. */
 .item-carrinho {
     display: flex;
     align-items: center;
@@ -55,6 +73,8 @@
     box-shadow: var(--sombra-padrao);
 }
 
+
+/* .item-carrinho img : organização dos elementos, dimensões e espaçamentos, aparência visual. */
 .item-carrinho img {
     width: 100px;
     height: 100px;
@@ -63,16 +83,22 @@
     border-radius: var(--borda-suave);
 }
 
+
+/* .item-info : organização dos elementos. */
 .item-info {
     flex: 1;
 }
 
+
+/* .item-info h3 : dimensões e espaçamentos, aparência visual, tipografia. */
 .item-info h3 {
     margin-bottom: 6px;
     color: var(--cor-escura);
     font-size: 1.1rem;
 }
 
+
+/* .item-categoria : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
 .item-categoria {
     display: block;
     margin-bottom: 8px;
@@ -82,17 +108,23 @@
     text-transform: uppercase;
 }
 
+
+/* .item-preco : aparência visual, tipografia. */
 .item-preco {
     color: #666;
     font-size: 14px;
 }
 
+
+/* .item-controle : organização dos elementos, dimensões e espaçamentos. */
 .item-controle {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+
+/* .btn-quantidade : dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
 .btn-quantidade {
     width: 30px;
     height: 30px;
@@ -108,11 +140,15 @@
         border-color 0.3s ease;
 }
 
+
+/* .btn-quantidade:hover : aparência visual. */
 .btn-quantidade:hover {
     background-color: var(--cor-primaria);
     border-color: var(--cor-primaria);
 }
 
+
+/* .quantidade : dimensões e espaçamentos, aparência visual, tipografia. */
 .quantidade {
     min-width: 25px;
     text-align: center;
@@ -121,6 +157,8 @@
     font-weight: 600;
 }
 
+
+/* .item-subtotal : dimensões e espaçamentos, aparência visual, tipografia. */
 .item-subtotal {
     min-width: 90px;
     text-align: right;
@@ -128,6 +166,8 @@
     font-size: 1rem;
 }
 
+
+/* .btn-remover : aparência visual, tipografia, interação visual. */
 .btn-remover {
     border: none;
     background: none;
@@ -137,10 +177,14 @@
     transition: color 0.3s ease;
 }
 
+
+/* .btn-remover:hover : aparência visual. */
 .btn-remover:hover {
     color: #c0392b;
 }
 
+
+/* .resumo-carrinho : dimensões e espaçamentos, aparência visual. */
 .resumo-carrinho {
     padding: 25px;
     background-color: var(--cor-branca);
@@ -148,12 +192,16 @@
     box-shadow: var(--sombra-padrao);
 }
 
+
+/* .resumo-carrinho h2 : dimensões e espaçamentos, aparência visual, tipografia. */
 .resumo-carrinho h2 {
     margin-bottom: 25px;
     color: var(--cor-escura);
     font-size: 1.3rem;
 }
 
+
+/* .resumo-linha : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
 .resumo-linha {
     display: flex;
     align-items: center;
@@ -164,10 +212,14 @@
     border-bottom: 1px solid #eeeeee;
 }
 
+
+/* .resumo-linha strong : aparência visual. */
 .resumo-linha strong {
     color: var(--cor-escura);
 }
 
+
+/* .resumo-linha.total : dimensões e espaçamentos, aparência visual, tipografia. */
 .resumo-linha.total {
     margin-top: 5px;
     padding: 18px 0;
@@ -177,11 +229,15 @@
     font-weight: bold;
 }
 
+
+/* .resumo-linha.total strong : aparência visual, tipografia. */
 .resumo-linha.total strong {
     color: var(--cor-escura);
     font-size: 1.3rem;
 }
 
+
+/* .btn-finalizar : dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
 .btn-finalizar {
     width: 100%;
     padding: 13px;
@@ -196,10 +252,14 @@
     transition: background-color 0.3s ease;
 }
 
+
+/* .btn-finalizar:hover : aparência visual. */
 .btn-finalizar:hover {
     background-color: var(--cor-primaria-hover);
 }
 
+
+/* .btn-continuar : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
 .btn-continuar {
     display: block;
     width: 100%;
@@ -216,11 +276,15 @@
         border-color 0.3s ease;
 }
 
+
+/* .btn-continuar:hover : aparência visual. */
 .btn-continuar:hover {
     background-color: #f7f7f7;
     border-color: var(--cor-primaria);
 }
 
+
+/* .carrinho-vazio : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
 .carrinho-vazio {
     display: flex;
     flex-direction: column;
@@ -236,12 +300,16 @@
     text-align: center;
 }
 
+
+/* .carrinho-vazio h2 : dimensões e espaçamentos, aparência visual, tipografia. */
 .carrinho-vazio h2 {
     margin-bottom: 10px;
     color: var(--cor-escura);
     font-size: 1.5rem;
 }
 
+
+/* .carrinho-vazio p : dimensões e espaçamentos, aparência visual, tipografia. */
 .carrinho-vazio p {
     max-width: 450px;
     margin-bottom: 25px;
@@ -249,6 +317,8 @@
     line-height: 1.5;
 }
 
+
+/* .btn-voltar-catalogo : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
 .btn-voltar-catalogo {
     display: inline-block;
     padding: 12px 20px;
@@ -261,48 +331,68 @@
     transition: background-color 0.3s ease;
 }
 
+
+/* .btn-voltar-catalogo:hover : aparência visual. */
 .btn-voltar-catalogo:hover {
     background-color: var(--cor-primaria-hover);
 }
 
 @media (max-width: 900px) {
+
+/* .carrinho-conteudo : organização dos elementos. */
     .carrinho-conteudo {
         grid-template-columns: 1fr;
     }
 
+
+/* .resumo-carrinho : apresentação do componente. */
     .resumo-carrinho {
         order: -1;
     }
 }
 
 @media (max-width: 600px) {
+
+/* .carrinho-pagina : dimensões e espaçamentos. */
     .carrinho-pagina {
         width: 92%;
         padding: 40px 0;
     }
 
+
+/* .carrinho-header h1 : tipografia. */
     .carrinho-header h1 {
         font-size: 2rem;
     }
 
+
+/* .item-carrinho : organização dos elementos, dimensões e espaçamentos. */
     .item-carrinho {
         flex-wrap: wrap;
         gap: 15px;
     }
 
+
+/* .item-carrinho img : dimensões e espaçamentos. */
     .item-carrinho img {
         width: 80px;
         height: 80px;
     }
 
+
+/* .item-info : dimensões e espaçamentos. */
     .item-info {
         min-width: calc(100% - 100px);
     }
 
+
+/* .item-controle : dimensões e espaçamentos. */
     .item-controle {
         margin-left: 95px;
     }
 
+
+/* .item-subtotal : dimensões e espaçamentos. */
     .item-subtotal {
         margin-left: auto;
     }

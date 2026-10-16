@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
+  <!-- Metadados, título e folhas de estilo externas. -->
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catálogo de Produtos</title>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/responsivo.css" />
   </head>
   <body>
+    <!-- Identidade da padaria, navegação e acesso ao carrinho. -->
     <header class="navbar">
       <div class="logo-area">
         <img
@@ -19,17 +21,20 @@
           <strong>AÇORIANA</strong> <span>CONVENIÊNCIA / PÃES ESPECIAIS</span>
         </div>
       </div>
-      <nav class="menu">
-        <a href="#" class="links">Início</a>
+      <!-- O menu é recolhido por script.js em telas pequenas. -->
+        <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+        <a href="index.html#inicio" class="links">Início</a>
         <a href="catalogo.html" class="links">Catálogo</a>
-        <a href="#" class="links">Sobre Nós</a>
-        <a href="#" class="links">Contato</a>
+        <a href="index.html#sobre-nos" class="links">Sobre Nós</a>
+        <a href="index.html#contato" class="links">Contato</a>
       </nav>
-      <div class="acoes">
+      <!-- Botão acessível: aria-expanded acompanha a abertura do menu. -->
+        <button class="menu-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" hidden>Menu</button>
+        <div class="acoes">
         <a href="carrinho.html" class="carrinho">
           Carrinho <span class="contador">0</span>
         </a>
-        <a href="#" class="encomenda"> Fazer Encomenda </a>
+        <a href="catalogo.html" class="encomenda"> Fazer Encomenda </a>
       </div>
     </header>
     <main class="catalogo">
@@ -60,10 +65,13 @@
             <button class="filtro" data-categoria="Pratos Especiais">Pratos Especiais</button>
         </div>
       </section>
+      <!-- Região preenchida pela busca e pelos filtros de categoria. -->
+      <p id="resultado-busca" role="status" aria-live="polite"></p>
       <section class="produtos"><div class="lista-produtos"></div></section>
     </main>
+    <!-- JavaScript externo; a ordem garante a disponibilidade das funções compartilhadas. -->
     <script src="js/produtos.js"></script>
-    <script src="js/carrinho.js"></script>
+    <script src="js/script.js"></script>
     <script src="js/catalogo.js"></script>
   </body>
 </html>
