@@ -2,10 +2,14 @@
 
 @media (max-width: 900px) {
 
+
+/* .cards : organização dos elementos. */
     .cards {
         flex-wrap: wrap;
     }
 
+
+/* .card : organização dos elementos. */
     .card {
         flex: 1 1 calc(50% - 15px);
     }
@@ -14,19 +18,27 @@
 
 @media (max-width: 600px) {
 
+
+/* .categoria : dimensões e espaçamentos. */
     .categoria {
         padding: 40px 20px;
     }
 
+
+/* .categoria-titulo : organização dos elementos. */
     .categoria-titulo {
         flex-direction: column;
         align-items: flex-start;
     }
 
+
+/* .cards : organização dos elementos. */
     .cards {
         flex-direction: column;
     }
 
+
+/* .card : dimensões e espaçamentos. */
     .card {
         width: 100%;
     }
@@ -38,10 +50,14 @@
 
 @media (max-width: 900px) {
 
+
+/* .produtos-destaque : organização dos elementos. */
     .produtos-destaque {
         flex-wrap: wrap;
     }
 
+
+/* .produto-card : organização dos elementos. */
     .produto-card {
         flex: 1 1 calc(50% - 15px);
     }
@@ -51,22 +67,32 @@
 
 @media (max-width: 600px) {
 
+
+/* .favoritos : dimensões e espaçamentos. */
     .favoritos {
         padding: 40px 20px;
     }
 
+
+/* .favoritos-cabecalho h2 : tipografia. */
     .favoritos-cabecalho h2 {
         font-size: 24px;
     }
 
+
+/* .produtos-destaque : organização dos elementos. */
     .produtos-destaque {
         flex-direction: column;
     }
 
+
+/* .produto-card : dimensões e espaçamentos. */
     .produto-card {
         width: 100%;
     }
 
+
+/* .produto-imagem : dimensões e espaçamentos. */
     .produto-imagem {
         height: 190px;
     }
@@ -76,19 +102,27 @@
 
 /* NOVAS CORES DA PÁGINA */
 
+
+/* .categoria : aparência visual. */
 .categoria {
     background-color: #e9d4af;
 }
 
+
+/* .favoritos : aparência visual. */
 .favoritos {
     background-color: #f4e5cc;
 }
 
+
+/* .categoria .card, .favoritos .produto-card : aparência visual. */
 .categoria .card,
 .favoritos .produto-card {
     background-color: #ffffff;
 }
 
+
+/* .hero-section, .sobre-nos : aparência visual. */
 .hero-section,
 .sobre-nos {
     background-color: #ffffff;

@@ -1,10 +1,15 @@
+// Catálogo: renderização de produtos, busca e filtros combinados.
+"use strict";
+
 const listaProdutos = document.querySelector(".lista-produtos");
 const campoBusca = document.querySelector("#campo-busca");
 const filtros = document.querySelectorAll(".filtro");
 
+// Estado dos filtros aplicado em conjunto a cada renderização.
 let categoriaAtual = "Todos";
 let termoBusca = "";
 
+/** Reconstrói os cartões com os produtos que atendem à categoria e à busca. */
 function renderizarProdutos() {
     listaProdutos.innerHTML = "";
 
@@ -20,7 +25,13 @@ function renderizarProdutos() {
         return correspondeCategoria && correspondeBusca;
     });
 
+    // O estado vazio explica por que não há cartões e anuncia a contagem.
+    document.querySelector("#resultado-busca").textContent = produtosFiltrados.length
+        ? `${produtosFiltrados.length} produtos encontrados.`
+        : "Nenhum produto encontrado. Tente outra busca ou categoria.";
+
     produtosFiltrados.forEach((produto) => {
+        // Os dados vêm exclusivamente do arquivo estático produtos.js.
         const card = document.createElement("div");
         card.classList.add("card-produto");
 
@@ -50,6 +61,15 @@ function renderizarProdutos() {
             </div>
         `;
 
+        // Identifica os controles para tecnologias assistivas.
+        card.querySelector(".diminuir").setAttribute("aria-label", `Diminuir quantidade de ${produto.nome}`);
+        card.querySelector(".aumentar").setAttribute("aria-label", `Aumentar quantidade de ${produto.nome}`);
+        const imagem = card.querySelector("img");
+        imagem.loading = "lazy";
+        // Usa a marca local se uma imagem demonstrativa remota estiver indisponível.
+        imagem.addEventListener("error", () => {
+            imagem.src = "assets/logo/logo_padaria_acoriana.png";
+        }, { once: true });
         const quantidade = card.querySelector(".quantidade");
         const diminuir = card.querySelector(".diminuir");
         const aumentar = card.querySelector(".aumentar");
@@ -57,6 +77,7 @@ function renderizarProdutos() {
 
         let valorQuantidade = 1;
 
+        // Os controles respeitam o mínimo de 1 e o máximo compartilhado de 99.
         diminuir.addEventListener("click", () => {
             if (valorQuantidade > 1) {
                 valorQuantidade--;
@@ -65,7 +86,7 @@ function renderizarProdutos() {
         });
 
         aumentar.addEventListener("click", () => {
-            valorQuantidade++;
+            valorQuantidade = Math.min(QUANTIDADE_MAXIMA, valorQuantidade + 1);
             quantidade.textContent = valorQuantidade;
         });
 
@@ -77,11 +98,13 @@ function renderizarProdutos() {
     });
 }
 
+// O evento input atualiza os resultados a cada edição do campo.
 campoBusca.addEventListener("input", () => {
     termoBusca = campoBusca.value;
     renderizarProdutos();
 });
 
+// Um clique troca a categoria e preserva o termo digitado.
 filtros.forEach((filtro) => {
     filtro.addEventListener("click", () => {
         filtros.forEach((botao) => {
@@ -89,6 +112,7 @@ filtros.forEach((filtro) => {
         });
 
         filtro.classList.add("ativo");
+        filtros.forEach((botao) => botao.setAttribute("aria-pressed", String(botao === filtro)));
 
         categoriaAtual = filtro.dataset.categoria;
 
@@ -96,4 +120,6 @@ filtros.forEach((filtro) => {
     });
 });
 
+// Renderiza o catálogo completo e informa o estado inicial dos filtros.
+filtros.forEach((botao) => botao.setAttribute("aria-pressed", String(botao.classList.contains("ativo"))));
 renderizarProdutos();

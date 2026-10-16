@@ -1,3 +1,5 @@
+
+/* :root : variáveis e apresentação. */
 :root {   
   --cor-primaria: #d69d08; 
   --cor-primaria-hover: #eab11d;
@@ -8,12 +10,14 @@
   --sombra-padrao: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* * : dimensões e espaçamentos, aparência visual. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* body : aparência visual, tipografia. */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   color: var(--cor-texto);
@@ -22,6 +26,7 @@ body {
 
 /* ================= HEADER E NAVEGAÇÃO ================= */
 
+/* .navbar : organização dos elementos, dimensões e espaçamentos, aparência visual. */
 .navbar {
   width: 100%;
   height: 80px;
@@ -34,40 +39,47 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* .logo-area : organização dos elementos, dimensões e espaçamentos. */
 .logo-area {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+/* .logo-area img : dimensões e espaçamentos. */
 .logo-area img {
   width: 80px;
   height: auto;
   object-fit: contain;
 }
 
+/* .logo-text : organização dos elementos. */
 .logo-text {
   display: flex;
   flex-direction: column;
 }
 
+/* .logo-text strong : tipografia. */
 .logo-text strong {
   font-size: 18px;
   letter-spacing: 1.5px;
 }
 
+/* .logo-text span : aparência visual, tipografia. */
 .logo-text span {
   font-size: 9px;
   font-weight: bold;
   color: var(--cor-primaria);
 }
 
+/* .menu : organização dos elementos, dimensões e espaçamentos. */
 .menu {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
+/* .links : dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
 .links {
   color: #d5d5d5;
   text-decoration: none;
@@ -78,17 +90,20 @@ body {
   transition: all 0.3s ease;
 }
 
+/* .links:hover : aparência visual. */
 .links:hover {
   background-color: rgba(214, 157, 8, 0.1);
   color: var(--cor-primaria);
 }
 
+/* .acoes : organização dos elementos, dimensões e espaçamentos. */
 .acoes {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
+/* .carrinho, .encomenda : organização dos elementos, dimensões e espaçamentos, tipografia. */
 .carrinho,
 .encomenda {
   text-decoration: none;
@@ -99,14 +114,17 @@ body {
   gap: 8px;
 }
 
+/* .carrinho : aparência visual. */
 .carrinho {
   color: #ddd;
 }
 
+/* .carrinho:hover : aparência visual. */
 .carrinho:hover {
   color: var(--cor-primaria);
 }
 
+/* .contador : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
 .contador {
   background-color: var(--cor-primaria);
   color: var(--cor-escura);
@@ -119,6 +137,7 @@ body {
   font-size: 10px;
 }
 
+/* .encomenda : dimensões e espaçamentos, aparência visual, interação visual. */
 .encomenda {
   background-color: transparent;
   color: var(--cor-primaria);
@@ -128,7 +147,1589 @@ body {
   transition: all 0.3s ease;
 }
 
+/* .encomenda:hover : aparência visual. */
 .encomenda:hover {
   background-color: var(--cor-primaria);
   color: var(--cor-escura);
+}
+
+/* Componentes da página inicial com escopo de especificidade zero. */
+/* ================= HERO SECTION ================= */
+
+/* :where(.pagina-inicial) .hero-section : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .hero-section {
+    width: 100%;
+    min-height: 600px;
+    padding: 55px 5%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    gap: clamp(35px, 6vw, 100px);
+
+    background-color: var(--cor-branca);
+}
+
+/* ================= CONTEÚDO ================= */
+
+/* :where(.pagina-inicial) .hero-content : dimensões e espaçamentos. */
+:where(.pagina-inicial) .hero-content {
+    width: 100%;
+    max-width: 680px;
+    min-width: 0;
+}
+
+/* ================= ETIQUETA ================= */
+
+/* :where(.pagina-inicial) .tag-tradicao : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
+:where(.pagina-inicial) .tag-tradicao {
+    display: inline-block;
+
+    background-color: var(--cor-escura);
+    color: var(--cor-primaria);
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    padding: 9px 16px;
+    border-radius: 30px;
+
+    margin-bottom: 25px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* ================= TÍTULO ================= */
+
+/* :where(.pagina-inicial) .hero-content h1 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .hero-content h1 {
+    color: var(--cor-escura);
+
+    font-size: clamp(32px, 3.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+
+    margin: 0 0 24px;
+}
+
+/* ================= DESCRIÇÃO ================= */
+
+/* :where(.pagina-inicial) .hero-content p : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .hero-content p {
+    color: #555555;
+
+    font-size: clamp(16px, 1.1vw, 19px);
+    font-weight: 400;
+    line-height: 1.7;
+
+    margin: 0 0 32px;
+    max-width: 620px;
+}
+
+/* ================= BOTÕES ================= */
+
+/* :where(.pagina-inicial) .hero-botoes : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .hero-botoes {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-bottom: 30px;
+}
+
+/* :where(.pagina-inicial) .hero-botoes .btn-primary, :where(.pagina-inicial) .hero-botoes .btn-secondary : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
+:where(.pagina-inicial) .hero-botoes .btn-primary,
+:where(.pagina-inicial) .hero-botoes .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 52px;
+    padding: 14px 24px;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-decoration: none;
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+}
+
+/* :where(.pagina-inicial) .hero-botoes .btn-primary : aparência visual. */
+:where(.pagina-inicial) .hero-botoes .btn-primary {
+    background-color: var(--cor-primaria);
+    color: var(--cor-escura);
+}
+
+/* :where(.pagina-inicial) .hero-botoes .btn-primary:hover : aparência visual, interação visual. */
+:where(.pagina-inicial) .hero-botoes .btn-primary:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+}
+
+/* :where(.pagina-inicial) .hero-botoes .btn-secondary : aparência visual. */
+:where(.pagina-inicial) .hero-botoes .btn-secondary {
+    background-color: #ffffff;
+    color: var(--cor-escura);
+    border: 1px solid #d5d5d5;
+}
+
+/* :where(.pagina-inicial) .hero-botoes .btn-secondary:hover : aparência visual, interação visual. */
+:where(.pagina-inicial) .hero-botoes .btn-secondary:hover {
+    background-color: #f5f5f5;
+    border-color: var(--cor-escura);
+    transform: translateY(-2px);
+}
+
+/* ================= BENEFÍCIOS ================= */
+
+/* :where(.pagina-inicial) .hero-features : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .hero-features {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+
+    color: #555555;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* :where(.pagina-inicial) .hero-features span : organização dos elementos, dimensões e espaçamentos, tipografia. */
+:where(.pagina-inicial) .hero-features span {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 7px;
+
+    max-width: 190px;
+    line-height: 1.5;
+}
+
+/* :where(.pagina-inicial) .hero-features i : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .hero-features i {
+    color: #d69d08;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+/* ================= IMAGEM ================= */
+
+/* :where(.pagina-inicial) .hero-image-container : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .hero-image-container {
+    width: 100%;
+    max-width: 530px;
+    min-width: 0;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    justify-self: end;
+}
+
+/* Imagem inteira, sem recortar o conteúdo */
+
+/* :where(.pagina-inicial) .hero-img : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .hero-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 560px;
+
+    object-fit: contain;
+
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= BADGES ================= */
+
+/* :where(.pagina-inicial) .hero-image-container .badge : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .hero-image-container .badge {
+    position: absolute;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: rgba(34, 34, 34, 0.94);
+    color: #ffffff;
+
+    padding: 11px 16px;
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* :where(.pagina-inicial) .hero-image-container .badge-top : variáveis e apresentação. */
+:where(.pagina-inicial) .hero-image-container .badge-top {
+    top: 15px;
+    left: 15px;
+}
+
+/* :where(.pagina-inicial) .hero-image-container .badge-bottom : variáveis e apresentação. */
+:where(.pagina-inicial) .hero-image-container .badge-bottom {
+    bottom: 15px;
+    right: 15px;
+}
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 1024px) {
+
+/* :where(.pagina-inicial) .hero-section : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-section {
+        min-height: auto;
+        padding: 60px 5%;
+        gap: 35px;
+    }
+
+/* :where(.pagina-inicial) .hero-content h1 : tipografia. */
+    :where(.pagina-inicial) .hero-content h1 {
+        font-size: clamp(30px, 3.5vw, 40px);
+    }
+
+/* :where(.pagina-inicial) .hero-content p : tipografia. */
+    :where(.pagina-inicial) .hero-content p {
+        font-size: 16px;
+    }
+
+/* :where(.pagina-inicial) .hero-image-container : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-image-container {
+        max-width: 420px;
+    }
+
+/* :where(.pagina-inicial) .hero-features : dimensões e espaçamentos, tipografia. */
+    :where(.pagina-inicial) .hero-features {
+        font-size: 13px;
+        gap: 12px;
+    }
+}
+
+/* ================= CELULARES ================= */
+
+@media (max-width: 768px) {
+
+/* :where(.pagina-inicial) .hero-section : organização dos elementos, dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-section {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+        padding: 45px 5% 55px;
+        gap: 35px;
+    }
+
+/* :where(.pagina-inicial) .hero-content : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-content {
+        max-width: 100%;
+    }
+
+/* :where(.pagina-inicial) .tag-tradicao : dimensões e espaçamentos, tipografia. */
+    :where(.pagina-inicial) .tag-tradicao {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
+/* :where(.pagina-inicial) .hero-content h1 : dimensões e espaçamentos, tipografia. */
+    :where(.pagina-inicial) .hero-content h1 {
+        font-size: clamp(29px, 7vw, 38px);
+        letter-spacing: -0.6px;
+        margin-bottom: 20px;
+    }
+
+/* :where(.pagina-inicial) .hero-content p : dimensões e espaçamentos, tipografia. */
+    :where(.pagina-inicial) .hero-content p {
+        font-size: 16px;
+        line-height: 1.65;
+        margin-bottom: 26px;
+    }
+
+/* :where(.pagina-inicial) .hero-botoes : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-botoes {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+/* :where(.pagina-inicial) .hero-features : dimensões e espaçamentos, tipografia. */
+    :where(.pagina-inicial) .hero-features {
+        gap: 12px 20px;
+        font-size: 13px;
+    }
+
+/* :where(.pagina-inicial) .hero-image-container : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-image-container {
+        justify-self: center;
+        max-width: 450px;
+    }
+
+/* :where(.pagina-inicial) .hero-img : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-img {
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+/* :where(.pagina-inicial) .hero-section : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-section {
+        padding: 35px 5% 45px;
+    }
+
+/* :where(.pagina-inicial) .hero-botoes .btn-primary,     :where(.pagina-inicial) .hero-botoes .btn-secondary : organização dos elementos, dimensões e espaçamentos, tipografia. */
+    :where(.pagina-inicial) .hero-botoes .btn-primary,
+    :where(.pagina-inicial) .hero-botoes .btn-secondary {
+        flex: 1;
+        padding: 13px 10px;
+        font-size: 13px;
+    }
+
+/* :where(.pagina-inicial) .hero-features span : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .hero-features span {
+        max-width: none;
+    }
+
+/* :where(.pagina-inicial) .hero-image-container .badge-top : dimensões e espaçamentos, tipografia. */
+    :where(.pagina-inicial) .hero-image-container .badge-top {
+        top: 10px;
+        left: 10px;
+        font-size: 9px;
+        padding: 9px 12px;
+    }
+}
+
+/* ================= SEÇÃO CATEGORIAS ================= */
+
+/* :where(.pagina-inicial) .categoria : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .categoria {
+    width: 100%;
+    padding: 50px 5%;
+    background-color: #f9f9f9;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Texto superior da seção */
+
+/* :where(.pagina-inicial) .categoria-text : dimensões e espaçamentos. */
+:where(.pagina-inicial) .categoria-text {
+    width: 100%;
+}
+
+/* :where(.pagina-inicial) .categoria-label : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
+:where(.pagina-inicial) .categoria-label {
+    display: block;
+
+    color: var(--cor-primaria);
+    font-size: 10px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+/* :where(.pagina-inicial) .categoria-titulo : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .categoria-titulo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* :where(.pagina-inicial) .categoria-titulo h2 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .categoria-titulo h2 {
+    color: var(--cor-escura);
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+/* :where(.pagina-inicial) .categoria-titulo p : aparência visual, tipografia. */
+:where(.pagina-inicial) .categoria-titulo p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Link "5 categorias completas" */
+
+/* :where(.pagina-inicial) .ver-categorias : aparência visual, tipografia. */
+:where(.pagina-inicial) .ver-categorias {
+    color: var(--cor-escura);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+/* :where(.pagina-inicial) .ver-categorias:hover : aparência visual. */
+:where(.pagina-inicial) .ver-categorias:hover {
+    color: var(--cor-primaria);
+}
+
+/* ================= CARDS ================= */
+
+/* :where(.pagina-inicial) .cards : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .cards {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+
+    justify-content: space-between;
+}
+
+/* Cada card */
+
+/* :where(.pagina-inicial) .card : organização dos elementos, dimensões e espaçamentos, aparência visual, interação visual. */
+:where(.pagina-inicial) .card {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 18px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: var(--borda-suave);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+}
+
+/* Ícone */
+
+/* :where(.pagina-inicial) .card img : dimensões e espaçamentos. */
+:where(.pagina-inicial) .card img {
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+/* Título */
+
+/* :where(.pagina-inicial) .card h3 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .card h3 {
+    color: var(--cor-escura);
+
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+/* Descrição */
+
+/* :where(.pagina-inicial) .card p : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .card p {
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-bottom: 18px;
+}
+
+/* Link */
+
+/* :where(.pagina-inicial) .card a : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .card a {
+    margin-top: auto;
+
+    color: var(--cor-primaria);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+/* :where(.pagina-inicial) .card a:hover : aparência visual. */
+:where(.pagina-inicial) .card a:hover {
+    color: var(--cor-primaria-hover);
+}
+
+/* Efeito quando passa o mouse */
+
+/* :where(.pagina-inicial) .card:hover : aparência visual, interação visual. */
+:where(.pagina-inicial) .card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--sombra-padrao);
+
+    border-color: #e5e5e5;
+}
+
+/* ================= FAVORITOS ================= */
+
+/* :where(.pagina-inicial) .favoritos : dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .favoritos {
+    width: 100%;
+    padding: 45px 5% 60px;
+    background-color: #ffffff;
+}
+
+/* ================= CABEÇALHO ================= */
+
+/* :where(.pagina-inicial) .favoritos-cabecalho : dimensões e espaçamentos. */
+:where(.pagina-inicial) .favoritos-cabecalho {
+    margin-bottom: 25px;
+}
+
+/* :where(.pagina-inicial) .favoritos-label : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .favoritos-label {
+    display: block;
+
+    color: var(--cor-primaria);
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+/* :where(.pagina-inicial) .favoritos-cabecalho h2 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .favoritos-cabecalho h2 {
+    color: var(--cor-escura);
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+/* :where(.pagina-inicial) .favoritos-cabecalho p : aparência visual, tipografia. */
+:where(.pagina-inicial) .favoritos-cabecalho p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+/* ================= CARDS ================= */
+
+/* :where(.pagina-inicial) .produtos-destaque : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .produtos-destaque {
+    width: 100%;
+
+    display: flex;
+
+    gap: 15px;
+}
+
+/* ================= CARD DO PRODUTO ================= */
+
+/* :where(.pagina-inicial) .produto-card : organização dos elementos, dimensões e espaçamentos, aparência visual, interação visual. */
+:where(.pagina-inicial) .produto-card {
+    flex: 1;
+
+    min-width: 0;
+
+    background-color: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: var(--borda-suave);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+}
+
+/* :where(.pagina-inicial) .produto-card:hover : aparência visual, interação visual. */
+:where(.pagina-inicial) .produto-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--sombra-padrao);
+}
+
+/* ================= IMAGEM ================= */
+
+/* :where(.pagina-inicial) .produto-imagem : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .produto-imagem {
+    position: relative;
+
+    width: 100%;
+    height: 150px;
+
+    overflow: hidden;
+}
+
+/* :where(.pagina-inicial) .produto-imagem img : organização dos elementos, dimensões e espaçamentos, interação visual. */
+:where(.pagina-inicial) .produto-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+/* :where(.pagina-inicial) .produto-card:hover .produto-imagem img : interação visual. */
+:where(.pagina-inicial) .produto-card:hover .produto-imagem img {
+    transform: scale(1.04);
+}
+
+/* ================= BADGE ================= */
+
+/* :where(.pagina-inicial) .produto-badge : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .produto-badge {
+    position: absolute;
+
+    top: 8px;
+    left: 8px;
+
+    padding: 4px 8px;
+
+    background-color: var(--cor-escura);
+
+    color: var(--cor-branca);
+
+    border-radius: 5px;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= INFORMAÇÕES ================= */
+
+/* :where(.pagina-inicial) .produto-info : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .produto-info {
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+/* :where(.pagina-inicial) .produto-info h3 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .produto-info h3 {
+    color: var(--cor-escura);
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    margin-bottom: 7px;
+}
+
+/* :where(.pagina-inicial) .produto-descricao : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .produto-descricao {
+    color: #777;
+
+    font-size: 9px;
+
+    line-height: 1.45;
+
+    margin-bottom: 12px;
+}
+
+/* ================= PREÇO ================= */
+
+/* :where(.pagina-inicial) .produto-preco : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .produto-preco {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 5px;
+
+    margin-top: auto;
+
+    margin-bottom: 10px;
+}
+
+/* :where(.pagina-inicial) .produto-preco span : aparência visual, tipografia. */
+:where(.pagina-inicial) .produto-preco span {
+    color: #777;
+
+    font-size: 8px;
+}
+
+/* :where(.pagina-inicial) .produto-preco strong : aparência visual, tipografia. */
+:where(.pagina-inicial) .produto-preco strong {
+    color: var(--cor-escura);
+
+    font-size: 12px;
+
+    white-space: nowrap;
+}
+
+/* ================= BOTÃO ================= */
+
+/* :where(.pagina-inicial) .btn-produto : dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
+:where(.pagina-inicial) .btn-produto {
+    width: 100%;
+
+    border: none;
+
+    background-color: #f5c94a;
+
+    color: var(--cor-escura);
+
+    padding: 9px 8px;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* :where(.pagina-inicial) .btn-produto:hover : aparência visual, interação visual. */
+:where(.pagina-inicial) .btn-produto:hover {
+    background-color: var(--cor-primaria);
+
+    transform: translateY(-1px);
+}
+
+/* Botão específico da cesta */
+
+/* :where(.pagina-inicial) .btn-encomendar : aparência visual. */
+:where(.pagina-inicial) .btn-encomendar {
+    background-color: var(--cor-escura);
+
+    color: var(--cor-branca);
+}
+
+/* :where(.pagina-inicial) .btn-encomendar:hover : aparência visual. */
+:where(.pagina-inicial) .btn-encomendar:hover {
+    background-color: #333333;
+}
+
+/* ================= SOBRE NÓS ================= */
+
+/* ================= SOBRE NÓS ================= */
+
+/* :where(.pagina-inicial) .sobre-nos : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .sobre-nos {
+    width: 100%;
+    padding: 35px 3.5%;
+    background-color: #ffffff;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 16px;
+}
+
+/* ================= COLUNA ESQUERDA ================= */
+
+/* :where(.pagina-inicial) .sobre-nos-conteudo : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .sobre-nos-conteudo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+/* ================= CABEÇALHO ================= */
+
+/* :where(.pagina-inicial) .sobre-nos-header : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .sobre-nos-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-logo : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .sobre-nos-logo {
+    width: 68px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-titulo : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .sobre-nos-titulo {
+    flex: 1;
+    min-width: 0;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-titulo span : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-titulo span {
+    display: block;
+    color: #a87500;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-titulo h2 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-titulo h2 {
+    color: var(--cor-escura);
+    font-size: clamp(20px, 2.7vw, 28px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+/* ================= TEXTO ================= */
+
+/* :where(.pagina-inicial) .sobre-nos-body : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .sobre-nos-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-body p : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-body p {
+    color: #64606a;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.15px;
+    margin: 0;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-body strong : aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-body strong {
+    color: #49444d;
+    font-weight: 700;
+}
+
+/* ================= CARDS ================= */
+
+/* :where(.pagina-inicial) .sobre-nos-cards : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .sobre-nos-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-card : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .sobre-nos-card {
+    min-width: 0;
+    background-color: #faf8f7;
+    border: 1px solid #f5f2f0;
+    border-radius: 10px;
+    padding: 12px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-card h3 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-card h3 {
+    color: #936400;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 3px;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-card strong : aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-card strong {
+    color: #292929;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-card span : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-card span {
+    color: #77717b;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* ================= IMAGEM DIREITA ================= */
+
+/* :where(.pagina-inicial) .sobre-nos-imagem : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .sobre-nos-imagem {
+    position: relative;
+    min-width: 0;
+    min-height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10);
+}
+
+/* :where(.pagina-inicial) .sobre-nos-imagem::after : organização dos elementos, aparência visual. */
+:where(.pagina-inicial) .sobre-nos-imagem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 48%,
+            rgba(0, 0, 0, 0.72) 100%);
+    pointer-events: none;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-imagem img : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .sobre-nos-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ================= TEXTO SOBRE A IMAGEM ================= */
+
+/* :where(.pagina-inicial) .sobre-nos-imagem-texto : organização dos elementos. */
+:where(.pagina-inicial) .sobre-nos-imagem-texto {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 1;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-imagem-texto h3 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-imagem-texto h3 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 5px;
+}
+
+/* :where(.pagina-inicial) .sobre-nos-imagem-texto span : aparência visual, tipografia. */
+:where(.pagina-inicial) .sobre-nos-imagem-texto span {
+    color: #f5ca74;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+
+@media (max-width: 768px) {
+
+/* :where(.pagina-inicial) .sobre-nos : organização dos elementos, dimensões e espaçamentos. */
+    :where(.pagina-inicial) .sobre-nos {
+        grid-template-columns: 1fr;
+        padding: 35px 5%;
+        gap: 24px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-titulo h2 : tipografia. */
+    :where(.pagina-inicial) .sobre-nos-titulo h2 {
+        font-size: 24px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-body p : tipografia. */
+    :where(.pagina-inicial) .sobre-nos-body p {
+        font-size: 13px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-imagem : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .sobre-nos-imagem {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+
+/* :where(.pagina-inicial) .sobre-nos-header : organização dos elementos. */
+    :where(.pagina-inicial) .sobre-nos-header {
+        align-items: flex-start;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-logo : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .sobre-nos-logo {
+        width: 60px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-titulo h2 : tipografia. */
+    :where(.pagina-inicial) .sobre-nos-titulo h2 {
+        font-size: 21px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-cards : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .sobre-nos-cards {
+        gap: 6px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-card : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .sobre-nos-card {
+        padding: 12px 8px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-card h3 : tipografia. */
+    :where(.pagina-inicial) .sobre-nos-card h3 {
+        font-size: 20px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-card strong : tipografia. */
+    :where(.pagina-inicial) .sobre-nos-card strong {
+        font-size: 8px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-card span : tipografia. */
+    :where(.pagina-inicial) .sobre-nos-card span {
+        font-size: 8px;
+    }
+
+/* :where(.pagina-inicial) .sobre-nos-imagem : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .sobre-nos-imagem {
+        min-height: 300px;
+    }
+}
+
+/* ================= RODAPÉ ================= */
+
+/* :where(.pagina-inicial) .footer : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .footer {
+    width: 100%;
+    background-color: #2d2d2d;
+    color: #ffffff;
+
+    padding: 35px 5% 15px;
+
+    font-size: 12px;
+}
+
+/* ================= CONTAINER ================= */
+
+/* :where(.pagina-inicial) .footer-container : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1.15fr;
+
+    gap: 45px;
+}
+
+/* ================= COLUNAS ================= */
+
+/* :where(.pagina-inicial) .footer-col : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+}
+
+/* :where(.pagina-inicial) .footer-col h3 : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .footer-col h3 {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    margin: 0 0 5px;
+}
+
+/* ================= LOGO ================= */
+
+/* :where(.pagina-inicial) .footer-logo : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* :where(.pagina-inicial) .footer-logo img : dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-logo img {
+    width: 85px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* :where(.pagina-inicial) .footer-logo strong : aparência visual, tipografia. */
+:where(.pagina-inicial) .footer-logo strong {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ================= DESCRIÇÃO ================= */
+
+/* :where(.pagina-inicial) .footer-identidade p : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .footer-identidade p {
+    color: #eeeeee;
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 270px;
+    margin: 0;
+}
+
+/* ================= REDES ================= */
+
+/* :where(.pagina-inicial) .footer-redes : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-redes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+/* :where(.pagina-inicial) .footer-redes a : aparência visual, tipografia, interação visual. */
+:where(.pagina-inicial) .footer-redes a {
+    color: #f1b935;
+    font-size: 17px;
+
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* :where(.pagina-inicial) .footer-redes a:hover : aparência visual, interação visual. */
+:where(.pagina-inicial) .footer-redes a:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ================= NAVEGAÇÃO ================= */
+
+/* :where(.pagina-inicial) .footer-links : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+/* :where(.pagina-inicial) .footer-links a : aparência visual, tipografia, interação visual. */
+:where(.pagina-inicial) .footer-links a {
+    color: #f5f5f5;
+    font-size: 12px;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+/* :where(.pagina-inicial) .footer-links a:hover : aparência visual. */
+:where(.pagina-inicial) .footer-links a:hover {
+    color: #f1b935;
+}
+
+/* ================= HORÁRIOS ================= */
+
+/* :where(.pagina-inicial) .footer-horario : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-horario {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* :where(.pagina-inicial) .horario-item : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .horario-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+/* :where(.pagina-inicial) .horario-item i : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .horario-item i {
+    color: #f1b935;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+/* :where(.pagina-inicial) .horario-item span : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .horario-item span {
+    color: #eeeeee;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* :where(.pagina-inicial) .horario-item strong : organização dos elementos, aparência visual, tipografia. */
+:where(.pagina-inicial) .horario-item strong {
+    display: block;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ================= CONTATO ================= */
+
+/* :where(.pagina-inicial) .footer-contato : dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-contato {
+    gap: 7px;
+}
+
+/* :where(.pagina-inicial) .footer-contato address : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .footer-contato address {
+    font-style: normal;
+    color: #eeeeee;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* :where(.pagina-inicial) .footer-contato>a:not(.footer-whatsapp) : aparência visual, tipografia. */
+:where(.pagina-inicial) .footer-contato>a:not(.footer-whatsapp) {
+    color: #eeeeee;
+    font-size: 12px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+/* :where(.pagina-inicial) .footer-contato>a:hover : aparência visual. */
+:where(.pagina-inicial) .footer-contato>a:hover {
+    color: #f1b935;
+}
+
+/* ================= WHATSAPP ================= */
+
+/* :where(.pagina-inicial) .footer-whatsapp : organização dos elementos, dimensões e espaçamentos, aparência visual, tipografia, interação visual. */
+:where(.pagina-inicial) .footer-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background-color: #e5aa1b;
+    color: #252525 !important;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    margin-top: 5px;
+
+    transition: all 0.3s ease;
+}
+
+/* :where(.pagina-inicial) .footer-whatsapp:hover : aparência visual, interação visual. */
+:where(.pagina-inicial) .footer-whatsapp:hover {
+    background-color: #f1bd3b;
+    transform: translateY(-2px);
+}
+
+/* ================= BARRA INFERIOR ================= */
+
+/* :where(.pagina-inicial) .footer-bottom : organização dos elementos, dimensões e espaçamentos, aparência visual. */
+:where(.pagina-inicial) .footer-bottom {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 35px auto 0;
+    padding-top: 15px;
+
+    border-top: 1px solid #494949;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* :where(.pagina-inicial) .footer-bottom p : dimensões e espaçamentos, aparência visual, tipografia. */
+:where(.pagina-inicial) .footer-bottom p {
+    color: #dddddd;
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* :where(.pagina-inicial) .footer-legal : organização dos elementos, dimensões e espaçamentos. */
+:where(.pagina-inicial) .footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* :where(.pagina-inicial) .footer-legal a : aparência visual, tipografia. */
+:where(.pagina-inicial) .footer-legal a {
+    color: #eeeeee;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* :where(.pagina-inicial) .footer-legal a:hover : aparência visual. */
+:where(.pagina-inicial) .footer-legal a:hover {
+    color: #f1b935;
+}
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 1000px) {
+
+/* :where(.pagina-inicial) .footer-container : organização dos elementos, dimensões e espaçamentos. */
+    :where(.pagina-inicial) .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+}
+
+/* ================= CELULARES ================= */
+
+@media (max-width: 600px) {
+
+/* :where(.pagina-inicial) .footer : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .footer {
+        padding: 35px 6% 20px;
+    }
+
+/* :where(.pagina-inicial) .footer-container : organização dos elementos, dimensões e espaçamentos. */
+    :where(.pagina-inicial) .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 18px;
+    }
+
+/* :where(.pagina-inicial) .footer-col h3 : tipografia. */
+    :where(.pagina-inicial) .footer-col h3 {
+        font-size: 11px;
+    }
+
+/* :where(.pagina-inicial) .footer-logo : organização dos elementos. */
+    :where(.pagina-inicial) .footer-logo {
+        flex-wrap: wrap;
+    }
+
+/* :where(.pagina-inicial) .footer-logo img : dimensões e espaçamentos. */
+    :where(.pagina-inicial) .footer-logo img {
+        width: 65px;
+    }
+
+/* :where(.pagina-inicial) .footer-logo strong : tipografia. */
+    :where(.pagina-inicial) .footer-logo strong {
+        font-size: 14px;
+    }
+
+/* :where(.pagina-inicial) .footer-identidade p,     :where(.pagina-inicial) .footer-links a,     :where(.pagina-inicial) .horario-item span,     :where(.pagina-inicial) .footer-contato address,     :where(.pagina-inicial) .footer-contato>a:not(.footer-whatsapp) : tipografia. */
+    :where(.pagina-inicial) .footer-identidade p,
+    :where(.pagina-inicial) .footer-links a,
+    :where(.pagina-inicial) .horario-item span,
+    :where(.pagina-inicial) .footer-contato address,
+    :where(.pagina-inicial) .footer-contato>a:not(.footer-whatsapp) {
+        font-size: 11px;
+    }
+
+/* :where(.pagina-inicial) .footer-bottom : organização dos elementos, dimensões e espaçamentos. */
+    :where(.pagina-inicial) .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+/* :where(.pagina-inicial) .footer-bottom p,     :where(.pagina-inicial) .footer-legal a : tipografia. */
+    :where(.pagina-inicial) .footer-bottom p,
+    :where(.pagina-inicial) .footer-legal a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+
+/* :where(.pagina-inicial) .footer-container : organização dos elementos. */
+    :where(.pagina-inicial) .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== CORES DAS SEÇÕES ===== */
+
+/* Hero - branco */
+
+/* :where(.pagina-inicial) .hero-section : aparência visual. */
+:where(.pagina-inicial) .hero-section {
+    background-color: #ffffff;
+}
+
+/* Categorias - cinza suave */
+
+/* :where(.pagina-inicial) .categoria : aparência visual. */
+:where(.pagina-inicial) .categoria {
+    background-color: #f5f5f5;
+}
+
+/* Favoritos - creme artesanal */
+
+/* :where(.pagina-inicial) .favoritos : aparência visual. */
+:where(.pagina-inicial) .favoritos {
+    background-color: #fff5e6;
+}
+
+/* Cards continuam brancos para criar contraste */
+
+/* :where(.pagina-inicial) .favoritos .produto-card : aparência visual. */
+:where(.pagina-inicial) .favoritos .produto-card {
+    background-color: #ffffff;
+    border: 1px solid #f0e4d5;
+}
+
+/* Cabeçalho dos favoritos */
+
+/* :where(.pagina-inicial) .favoritos-label : aparência visual. */
+:where(.pagina-inicial) .favoritos-label {
+    color: #a87500;
+}
+
+/* :where(.pagina-inicial) .favoritos-cabecalho h2 : aparência visual. */
+:where(.pagina-inicial) .favoritos-cabecalho h2 {
+    color: #292929;
+}
+
+/* Sobre Nós - branco */
+
+/* :where(.pagina-inicial) .sobre-nos : aparência visual. */
+:where(.pagina-inicial) .sobre-nos {
+    background-color: #ffffff;
+}
+
+/* Rodapé - grafite */
+
+/* :where(.pagina-inicial) .footer : aparência visual. */
+:where(.pagina-inicial) .footer {
+    background-color: #2d2d2d;
+}
+
+/* O atributo hidden precisa prevalecer mesmo em componentes que usam display: flex. */
+
+/* [hidden] : organização dos elementos. */
+[hidden] { display: none !important; }
+
+/* Foco visível permite localizar links e botões ao navegar pelo teclado. */
+
+/* :focus-visible : apresentação do componente. */
+:focus-visible { outline: 3px solid #946900; outline-offset: 4px; }
+
+/* Confirmações do carrinho permanecem legíveis sobre qualquer seção. */
+
+/* .aviso-carrinho : organização dos elementos, dimensões e espaçamentos, aparência visual, interação visual. */
+.aviso-carrinho {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    max-width: min(90vw, 560px);
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: #fff;
+    background: #222;
+    box-shadow: 0 4px 20px #0004;
+}
+
+/* O resumo utiliza dialog nativo, com fundo de bloqueio e rolagem em telas pequenas. */
+
+/* .dialogo-pedido : dimensões e espaçamentos, aparência visual. */
+.dialogo-pedido {
+    margin: auto;
+    padding: 28px;
+    width: min(92vw, 640px);
+    max-height: 85vh;
+    border: 0;
+    border-radius: 12px;
+    overflow: auto;
+}
+
+/* .dialogo-pedido::backdrop : aparência visual. */
+.dialogo-pedido::backdrop { background: #0009; }
+
+/* .dialogo-pedido p : dimensões e espaçamentos, tipografia. */
+.dialogo-pedido p { margin: 16px 0; line-height: 1.5; }
+
+/* .texto-pedido : dimensões e espaçamentos, tipografia. */
+.texto-pedido { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; line-height: 1.6; }
+
+/* .fechar-resumo, .menu-toggle : dimensões e espaçamentos, aparência visual, tipografia. */
+.fechar-resumo, .menu-toggle {
+    padding: 12px 18px;
+    border: 1px solid #d69d08;
+    border-radius: 8px;
+    background: #d69d08;
+    color: #222;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* .fechar-resumo : dimensões e espaçamentos. */
+.fechar-resumo { margin-top: 24px; }
+
+/* .menu-toggle : organização dos elementos. */
+.menu-toggle { display: none; }
+
+/* A mensagem de busca não ocupa espaço enquanto estiver vazia. */
+
+/* #resultado-busca : dimensões e espaçamentos, tipografia. */
+#resultado-busca { text-align: center; margin: 16px; }
+
+/* #resultado-busca:empty : organização dos elementos. */
+#resultado-busca:empty { display: none; }
+
+/* Cabeçalho móvel: os controles permanecem acessíveis sem rolagem horizontal. */
+@media (max-width: 900px) {
+
+/* .navbar : organização dos elementos, dimensões e espaçamentos. */
+    .navbar { height: auto; min-height: 80px; flex-wrap: wrap; gap: 12px; padding: 12px 5%; }
+
+/* .logo-area img : dimensões e espaçamentos. */
+    .logo-area img { width: 55px; }
+
+/* .logo-text span : dimensões e espaçamentos. */
+    .logo-text span { max-width: 150px; }
+
+/* .com-javascript .menu-toggle : organização dos elementos. */
+    .com-javascript .menu-toggle { display: block; }
+
+/* .menu : organização dos elementos. */
+    .menu { order: 4; flex-basis: 100%; flex-wrap: wrap; }
+
+/* .com-javascript .menu : organização dos elementos. */
+    .com-javascript .menu { display: none; }
+
+/* .com-javascript .menu.aberto : organização dos elementos. */
+    .com-javascript .menu.aberto { display: flex; }
+
+/* .acoes : organização dos elementos, dimensões e espaçamentos. */
+    .acoes { margin-left: auto; flex-wrap: wrap; }
+
+/* .footer-legal : organização dos elementos, dimensões e espaçamentos. */
+    .footer-legal { flex-wrap: wrap; gap: 10px; }
+}
+
+/* Respeita a preferência de acessibilidade por menos movimento na interface. */
+@media (prefers-reduced-motion: reduce) {
+
+/* *, *::before, *::after : interação visual. */
+    *, *::before, *::after { transition: none !important; animation: none !important; }
 }

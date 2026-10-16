@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+<!-- Metadados, título e folhas de estilo externas. -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,13 @@
     <title>Açoriana Conveniência</title>
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/responsivo.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
-<body>
+<body class="pagina-inicial">
+    <!-- Identidade da padaria, navegação e acesso ao carrinho. -->
     <header class="navbar">
 
         <div class="logo-area">
@@ -25,21 +26,24 @@
             </div>
         </div>
 
-        <nav class="menu">
-            <a href="#" class="links">Início</a>
+        <!-- O menu é recolhido por script.js em telas pequenas. -->
+        <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+            <a href="#inicio" class="links">Início</a>
             <a href="catalogo.html" class="links">Produtos</a>
-            <a href="#" class="links">Sobre Nós</a>
-            <a href="#" class="links">Contato</a>
+            <a href="#sobre-nos" class="links">Sobre Nós</a>
+            <a href="#contato" class="links">Contato</a>
         </nav>
 
+        <!-- Botão acessível: aria-expanded acompanha a abertura do menu. -->
+        <button class="menu-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" hidden>Menu</button>
         <div class="acoes">
-            <a href="#" class="carrinho">
+            <a href="carrinho.html" class="carrinho">
                 Carrinho
 
                 <span class="contador">0</span>
             </a>
 
-            <a href="#" class="encomenda">
+            <a href="catalogo.html" class="encomenda">
                 Fazer Encomenda
             </a>
         </div>
@@ -61,7 +65,7 @@
                     assados na hora e uma conveniência completa para você.</p>
 
                 <div class="hero-botoes">
-                    <a href="#" class="btn-primary">
+                    <a href="catalogo.html" class="btn-primary">
                         <i class="fa-solid fa-comment-dots"></i> Fazer Encomenda
                     </a>
                     <a href="#produtos" class="btn-secondary">
@@ -91,8 +95,8 @@
                 </div>
             </div>
         </section>
-    </main>
 
+    <!-- Categorias e destaques pertencem ao conteúdo principal. -->
     <section class="categoria" id="produtos">
 
         <div class="categoria-text">
@@ -107,7 +111,7 @@
                     </p>
                 </div>
 
-                <a href="produtos.html" class="ver-categorias">
+                <a href="catalogo.html" class="ver-categorias">
                     5 categorias completas →
                 </a>
             </div>
@@ -125,7 +129,7 @@
                     de fermentação natural.
                 </p>
 
-                <a href="produtos.html">Ver opções →</a>
+                <a href="catalogo.html">Ver opções →</a>
             </div>
 
             <div class="card">
@@ -138,7 +142,7 @@
                     e doces finos.
                 </p>
 
-                <a href="produtos.html">Ver opções →</a>
+                <a href="catalogo.html">Ver opções →</a>
             </div>
 
             <div class="card">
@@ -151,7 +155,7 @@
                     e folhados gourmet.
                 </p>
 
-                <a href="produtos.html">Ver opções →</a>
+                <a href="catalogo.html">Ver opções →</a>
             </div>
 
             <div class="card">
@@ -164,7 +168,7 @@
                     e laticínios frescos.
                 </p>
 
-                <a href="produtos.html">Ver opções →</a>
+                <a href="catalogo.html">Ver opções →</a>
             </div>
 
             <div class="card">
@@ -177,7 +181,7 @@
                     e itens de mercearia premium.
                 </p>
 
-                <a href="produtos.html">Ver opções →</a>
+                <a href="catalogo.html">Ver opções →</a>
             </div>
 
         </div>
@@ -202,7 +206,8 @@
         <div class="produtos-destaque">
 
             <!-- PRODUTO 1 -->
-            <article class="produto-card">
+            <!-- Cartão com dados declarativos para adicionar este destaque ao carrinho. -->
+            <article class="produto-card" data-nome="Pão Rústico de Fermentação Natural" data-preco="24.9" data-imagem="assets/produtos/pao-rustico.jpg">
 
                 <div class="produto-imagem">
 
@@ -241,7 +246,8 @@
 
 
             <!-- PRODUTO 2 -->
-            <article class="produto-card">
+            <!-- Cartão com dados declarativos para adicionar este destaque ao carrinho. -->
+            <article class="produto-card" data-nome="Croissant Tradicional Amanteigado" data-preco="14.5" data-imagem="assets/produtos/croissant-tradicional.jpg">
 
                 <div class="produto-imagem">
 
@@ -280,7 +286,8 @@
 
 
             <!-- PRODUTO 3 -->
-            <article class="produto-card">
+            <!-- Cartão com dados declarativos para adicionar este destaque ao carrinho. -->
+            <article class="produto-card" data-nome="Bolo de Cenoura com Ganache" data-preco="38" data-imagem="assets/produtos/bolo-cenoura.webp">
 
                 <div class="produto-imagem">
 
@@ -319,7 +326,8 @@
 
 
             <!-- PRODUTO 4 -->
-            <article class="produto-card">
+            <!-- Cartão com dados declarativos para adicionar este destaque ao carrinho. -->
+            <article class="produto-card" data-nome="Cesta Café da Manhã Especial" data-preco="89" data-imagem="assets/produtos/cesta-cafe.webp">
 
                 <div class="produto-imagem">
 
@@ -430,6 +438,8 @@
     </section>
 
 
+    </main>
+
     <!-- ================= RODAPÉ ================= -->
 
     <footer class="footer">
@@ -450,7 +460,7 @@
                 </p>
 
                 <div class="footer-redes">
-                    <a href="#" aria-label="Localização">
+                    <a href="#contato" aria-label="Localização">
                         <i class="fa-solid fa-location-dot"></i>
                     </a>
 
@@ -543,8 +553,8 @@
             </p>
 
             <div class="footer-legal">
-                <a href="termos.html">Termos de Uso</a>
-                <a href="privacidade.html">Privacidade</a>
+                <span>Protótipo acadêmico: valores demonstrativos.</span>
+                <span>O carrinho fica salvo neste navegador.</span>
             </div>
 
         </div>
@@ -552,10 +562,9 @@
     </footer>
 
 
-    <script src="js/main.js"></script>
+    <!-- JavaScript externo; a ordem garante a disponibilidade das funções compartilhadas. -->
+    <script src="js/script.js"></script>
 
 </body>
-
-</html>
 
 </html>
