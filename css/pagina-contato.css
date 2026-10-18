@@ -1,0 +1,325 @@
+/* ================= CONTATO ================= */
+
+.secao-contato {
+    width: 100%;
+    padding: 70px 5%;
+    background: linear-gradient(135deg, #fff8ed, #f5f5f5);
+}
+
+.contato-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho da seção */
+
+.contato-header {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.contato-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #a87500;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.contato-header h2 {
+    margin-bottom: 15px;
+    color: #222222;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+.contato-header p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Organização do formulário e informações */
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.8fr);
+    align-items: stretch;
+    gap: 35px;
+}
+
+/* Formulário */
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-width: 0;
+    padding: 35px;
+    background-color: #ffffff;
+    border: 1px solid #eee5d8;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(45, 35, 20, 0.08);
+}
+
+/* Campos */
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.campo-grupo label {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo-grupo input,
+.campo-grupo select,
+.campo-grupo textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #ded8cf;
+    border-radius: 9px;
+    background-color: #fffdfb;
+    color: #333333;
+    font-family: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo-grupo input,
+.campo-grupo select {
+    min-height: 50px;
+}
+
+.campo-grupo textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.campo-grupo input::placeholder,
+.campo-grupo textarea::placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+/* Destaque ao selecionar os campos */
+
+.campo-grupo input:focus,
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
+    outline: none;
+    border-color: #d69d08;
+    box-shadow: 0 0 0 3px rgba(214, 157, 8, 0.15);
+}
+
+/* Nome e e-mail na mesma linha */
+
+.campo-duplo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Botão de envio */
+
+.btn-enviar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 54px;
+    padding: 15px 22px;
+    border: none;
+    border-radius: 10px;
+    background-color: #d69d08;
+    color: #222222;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #eab11d;
+    transform: translateY(-2px);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+/* Informações de contato */
+
+.contato-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #eee5d8;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(45, 35, 20, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(45, 35, 20, 0.09);
+}
+
+/* Ícones das informações */
+
+.info-card > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: #fff3d6;
+    color: #a87500;
+    font-size: 20px;
+}
+
+/* Textos dos cartões */
+
+.info-card > div {
+    min-width: 0;
+}
+
+.info-card h4 {
+    margin-bottom: 8px;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.info-card p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* ================= TABLETS ================= */
+
+@media (max-width: 900px) {
+    .secao-contato {
+        padding: 55px 5%;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contato-info-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+}
+
+/* ================= CELULARES ================= */
+
+@media (max-width: 600px) {
+    .secao-contato {
+        padding: 40px 5%;
+    }
+
+    .contato-header {
+        margin-bottom: 30px;
+    }
+
+    .contato-header h2 {
+        font-size: 29px;
+    }
+
+    .contato-header p {
+        font-size: 14px;
+    }
+
+    .form-contato {
+        padding: 22px;
+        gap: 20px;
+        border-radius: 14px;
+    }
+
+    .campo-duplo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .campo-grupo input,
+    .campo-grupo select,
+    .campo-grupo textarea {
+        font-size: 16px;
+    }
+
+    .contato-info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
+}
+
+/* ================= CELULARES PEQUENOS ================= */
+
+@media (max-width: 380px) {
+    .form-contato {
+        padding: 16px;
+    }
+
+    .contato-header h2 {
+        font-size: 26px;
+    }
+
+    .info-card {
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .info-card > i {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+    }
+}
+
+/* ================= ACESSIBILIDADE ================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .info-card,
+    .btn-enviar,
+    .campo-grupo input,
+    .campo-grupo select,
+    .campo-grupo textarea {
+        transition: none;
+    }
+}
