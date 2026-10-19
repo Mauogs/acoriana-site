@@ -1,0 +1,409 @@
+/* =========================================================
+   RODAPÉ - Açoriana Conveniência
+   Todas as classes usam o prefixo "rodape-" para não
+   conflitar com os estilos existentes em style.css.
+   Para trocar as cores, altere apenas as variáveis abaixo.
+   ========================================================= */
+
+.rodape {
+  --rodape-fundo: #2a1b12;
+  --rodape-fundo-2: #35241a;
+  --rodape-texto: #f6ecdd;
+  --rodape-suave: #cdbba3;
+  --rodape-destaque: #d69d08;
+  --rodape-destaque-claro: #f0b92b;
+  --rodape-linha: rgba(246, 236, 221, 0.14);
+  --rodape-whatsapp: #25d366;
+  --rodape-aberto: #4cd68a;
+  --rodape-fechado: #ff8a7a;
+
+  position: relative;
+  margin-top: auto; /* empurra o rodapé para o fim em páginas curtas */
+  background: linear-gradient(180deg, var(--rodape-fundo-2), var(--rodape-fundo));
+  color: var(--rodape-texto);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Mantém o rodapé colado no fim da tela quando a página tem pouco conteúdo
+   (ex.: carrinho vazio). Só atua em páginas que possuem o rodapé. */
+body:has(> .rodape) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+body:has(> .rodape) > main {
+  flex: 1 0 auto;
+}
+
+/* Filete dourado no topo */
+.rodape::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--rodape-destaque),
+    var(--rodape-destaque-claro),
+    var(--rodape-destaque),
+    transparent
+  );
+}
+
+.rodape a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rodape :focus-visible {
+  outline: 3px solid var(--rodape-destaque-claro);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- Faixa de chamada para ação ---------- */
+
+.rodape-destaque {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--rodape-linha);
+}
+
+.rodape-destaque-texto h2 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+  line-height: 1.25;
+  color: var(--rodape-texto);
+}
+
+.rodape-destaque-texto p {
+  margin: 0;
+  color: var(--rodape-suave);
+}
+
+.rodape-destaque-acoes {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.rodape-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+}
+
+.rodape-btn:hover {
+  transform: translateY(-2px);
+}
+
+.rodape-btn-principal {
+  background: var(--rodape-whatsapp);
+  color: #0b2b17 !important;
+}
+
+.rodape-btn-principal:hover {
+  background: #3be37c;
+}
+
+.rodape-btn-secundario {
+  border-color: var(--rodape-destaque);
+  color: var(--rodape-destaque-claro) !important;
+}
+
+.rodape-btn-secundario:hover {
+  background: var(--rodape-destaque);
+  color: #2a1b12 !important;
+}
+
+/* ---------- Colunas ---------- */
+
+.rodape-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .rodape-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .rodape-container {
+    grid-template-columns: 1.5fr 1fr 1.15fr 1.35fr;
+    gap: 2.5rem;
+  }
+}
+
+.rodape-col h3 {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rodape-destaque-claro);
+}
+
+.rodape-col p {
+  margin: 0 0 1rem;
+  color: var(--rodape-suave);
+}
+
+/* Identidade */
+
+.rodape-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.rodape-logo img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(246, 236, 221, 0.08);
+  padding: 4px;
+}
+
+.rodape-logo strong {
+  display: block;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+.rodape-logo span {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--rodape-suave);
+}
+
+.rodape-redes {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.rodape-redes a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--rodape-linha);
+  background: rgba(246, 236, 221, 0.05);
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.rodape-redes a:hover {
+  transform: translateY(-3px);
+  background: var(--rodape-destaque);
+  color: #2a1b12;
+}
+
+/* Listas de links */
+
+.rodape-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.rodape-links a {
+  color: var(--rodape-suave);
+  width: fit-content;
+  background: linear-gradient(var(--rodape-destaque), var(--rodape-destaque))
+    left bottom / 0 2px no-repeat;
+  padding-bottom: 2px;
+  transition: color 0.2s ease, background-size 0.25s ease;
+}
+
+.rodape-links a:hover {
+  color: var(--rodape-texto);
+  background-size: 100% 2px;
+}
+
+/* Horários */
+
+.rodape-horarios {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.rodape-horarios li {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--rodape-destaque);
+}
+
+.rodape-horarios span {
+  color: var(--rodape-suave);
+  font-size: 0.85rem;
+}
+
+.rodape-horarios strong {
+  font-size: 1.05rem;
+}
+
+/* Selo "Aberto agora" (preenchido por rodape.js) */
+
+.rodape-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(246, 236, 221, 0.07);
+  border: 1px solid var(--rodape-linha);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.rodape-status[hidden] {
+  display: none;
+}
+
+.rodape-status-ponto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--rodape-fechado);
+  flex: none;
+}
+
+.rodape-status[data-aberto="true"] .rodape-status-ponto {
+  background: var(--rodape-aberto);
+  box-shadow: 0 0 0 0 rgba(76, 214, 138, 0.6);
+  animation: rodape-pulso 2s infinite;
+}
+
+@keyframes rodape-pulso {
+  70% {
+    box-shadow: 0 0 0 8px rgba(76, 214, 138, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 214, 138, 0);
+  }
+}
+
+/* Contato */
+
+.rodape-contato {
+  display: grid;
+  gap: 0.75rem;
+  font-style: normal;
+}
+
+.rodape-contato a,
+.rodape-contato span.rodape-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: var(--rodape-suave);
+  transition: color 0.2s ease;
+}
+
+.rodape-contato a:hover {
+  color: var(--rodape-texto);
+}
+
+.rodape-contato i {
+  width: 1.1rem;
+  margin-top: 0.2rem;
+  text-align: center;
+  color: var(--rodape-destaque-claro);
+  flex: none;
+}
+
+/* ---------- Barra inferior ---------- */
+
+.rodape-bottom {
+  border-top: 1px solid var(--rodape-linha);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.rodape-bottom-conteudo {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--rodape-suave);
+}
+
+.rodape-bottom p {
+  margin: 0;
+}
+
+.rodape-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+.rodape-topo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--rodape-linha);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.rodape-topo:hover {
+  background: var(--rodape-destaque);
+  color: #2a1b12;
+}
+
+@media (max-width: 639px) {
+  .rodape-destaque-acoes,
+  .rodape-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rodape-bottom-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rodape *,
+  .rodape-status-ponto {
+    animation: none !important;
+    transition: none !important;
+  }
+}
