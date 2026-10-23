@@ -260,6 +260,64 @@
     background-color: var(--cor-primaria-hover);
 }
 
+.produto-link-imagem {
+    display: block;
+    overflow: hidden;
+}
+
+.produto-link-imagem img {
+    width: 100%;
+    display: block;
+}
+
+.produto-link-nome {
+    color: inherit;
+    text-decoration: none;
+}
+
+.produto-link-nome:hover {
+    color: var(--cor-primaria-hover);
+}
+
+.btn-ver-detalhes {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-ver-detalhes {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid var(--cor-primaria);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--cor-escura);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-ver-detalhes:hover {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-escura);
+}
+
+.btn-ver-detalhes:focus-visible {
+    outline: 3px solid var(--cor-primaria-hover);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-ver-detalhes {
+        transition: none;
+    }
+}
+
 @media (max-width: 900px) {
 
 /* .lista-produtos : organização dos elementos. */
