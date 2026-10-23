@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça os detalhes dos produtos da Açoriana Conveniência e prepare sua encomenda.">
+    <title>Detalhes do Produto | Açoriana Conveniência</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produto.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="stylesheet" href="css/rodape.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="assets/logo/logo_padaria_acoriana.png" alt="Logo da Açoriana Conveniência">
+            <div class="logo-text">
+                <strong>AÇORIANA</strong>
+                <span>CONVENIÊNCIA / PÃES ESPECIAIS</span>
+            </div>
+        </div>
+
+        <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+            <a href="index.html#inicio" class="links">Início</a>
+            <a href="catalogo.html" class="links">Catálogo</a>
+            <a href="sobre.html" class="links">Sobre Nós</a>
+            <a href="index.html#contato" class="links">Contato</a>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" hidden>Menu</button>
+
+        <div class="acoes">
+            <a href="carrinho.html" class="carrinho">
+                Carrinho <span class="contador">0</span>
+            </a>
+            <a href="catalogo.html" class="encomenda">Fazer Encomenda</a>
+        </div>
+    </header>
+
+    <main class="pagina-produto">
+        <nav class="caminho-produto" aria-label="Você está aqui">
+            <a href="index.html">Início</a>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            <a href="catalogo.html">Catálogo</a>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            <span id="breadcrumb-produto">Produto</span>
+        </nav>
+
+        <section class="detalhes-produto" aria-labelledby="nome-produto">
+            <div class="produto-imagem-container">
+                <img
+                    id="imagem-produto"
+                    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1000&q=85"
+                    alt="Pão francês da Açoriana Conveniência"
+                >
+                <span class="produto-selo">Qualidade e sabor</span>
+            </div>
+
+            <div class="produto-conteudo">
+                <span class="produto-categoria" id="categoria-produto">Pães</span>
+
+                <h1 id="nome-produto">Pão Francês</h1>
+
+                <p class="produto-descricao" id="descricao-produto">
+                    Pão francês tradicional, crocante por fora e macio por dentro.
+                </p>
+
+                <div class="produto-preco-container">
+                    <span>Preço unitário</span>
+                    <strong id="preco-produto">R$ 1,20</strong>
+                </div>
+
+                <div class="produto-divisor"></div>
+
+                <div class="produto-compra">
+                    <label for="quantidade-produto">Quantidade</label>
+
+                    <div class="produto-controles">
+                        <div class="controle-quantidade">
+                            <button
+                                class="btn-quantidade"
+                                id="diminuir-quantidade"
+                                type="button"
+                                aria-label="Diminuir quantidade"
+                            >
+                                <i class="fa-solid fa-minus" aria-hidden="true"></i>
+                            </button>
+
+                            <span class="quantidade" id="quantidade-produto" aria-live="polite">1</span>
+
+                            <button
+                                class="btn-quantidade"
+                                id="aumentar-quantidade"
+                                type="button"
+                                aria-label="Aumentar quantidade"
+                            >
+                                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <button class="btn-adicionar-produto" id="adicionar-produto" type="button">
+                            <i class="fa-solid fa-cart-plus" aria-hidden="true"></i>
+                            Adicionar ao carrinho
+                        </button>
+                    </div>
+                </div>
+
+                <p class="produto-aviso" id="aviso-produto" role="status" aria-live="polite"></p>
+
+                <div class="produto-beneficios">
+                    <div>
+                        <i class="fa-solid fa-basket-shopping" aria-hidden="true"></i>
+                        <span>Encomenda prática</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                        <span>Sabor para todos os momentos</span>
+                    </div>
+                </div>
+
+                <a href="catalogo.html" class="voltar-catalogo">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    Voltar ao catálogo
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape" aria-labelledby="rodape-titulo">
+        <div class="rodape-destaque">
+            <div class="rodape-destaque-texto">
+                <h2 id="rodape-titulo">Que tal um pão quentinho hoje?</h2>
+                <p>Peça pelo WhatsApp ou monte sua encomenda no catálogo.</p>
+            </div>
+
+            <div class="rodape-destaque-acoes">
+                <a
+                    class="rodape-btn rodape-btn-principal"
+                    href="https://wa.me/5515978654321?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20encomenda."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    Pedir pelo WhatsApp
+                </a>
+                <a class="rodape-btn rodape-btn-secundario" href="catalogo.html">
+                    <i class="fa-solid fa-store" aria-hidden="true"></i>
+                    Ver catálogo
+                </a>
+            </div>
+        </div>
+
+        <div class="rodape-container">
+            <div class="rodape-col">
+                <div class="rodape-logo">
+                    <img src="assets/logo/logo_padaria_acoriana.png" alt="Logo da Açoriana Conveniência">
+                    <div>
+                        <strong>AÇORIANA</strong>
+                        <span>CONVENIÊNCIA / PÃES ESPECIAIS</span>
+                    </div>
+                </div>
+
+                <p>Tradição e aconchego em panificação artesanal de fermentação natural e conveniência premium.</p>
+
+                <div class="rodape-redes">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua+das+Açorianas,+120" target="_blank" rel="noopener noreferrer" aria-label="Ver localização no mapa">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    </a>
+                    <a href="tel:+5515978654321" aria-label="Ligar para a padaria">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://wa.me/5515978654321" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:contato@acoriana.com.br" aria-label="Enviar e-mail">
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="rodape-col">
+                <h3>Navegação</h3>
+                <nav class="rodape-links" aria-label="Navegação do rodapé">
+                    <a href="index.html#inicio">Início</a>
+                    <a href="catalogo.html">Catálogo completo</a>
+                    <a href="sobre.html">Nossa História</a>
+                    <a href="carrinho.html">Meu carrinho</a>
+                </nav>
+            </div>
+
+            <div class="rodape-col">
+                <h3>Atendimento</h3>
+                <ul class="rodape-horarios">
+                    <li>
+                        <span>Segunda a sábado</span>
+                        <strong>06h às 22h</strong>
+                    </li>
+                    <li>
+                        <span>Domingos e feriados</span>
+                        <strong>07h às 21h</strong>
+                    </li>
+                </ul>
+
+                <p class="rodape-status" id="rodape-status" role="status" hidden>
+                    <span class="rodape-status-ponto" aria-hidden="true"></span>
+                    <span id="rodape-status-texto"></span>
+                </p>
+            </div>
+
+            <div class="rodape-col">
+                <h3>Contato &amp; Pedidos</h3>
+                <address class="rodape-contato">
+                    <span class="rodape-item">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        Rua das Açorianas, 120 - Centro Gourmet
+                    </span>
+                    <a href="tel:+5515997491809">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        +(15) 99749-1809
+                    </a>
+                    <a href="mailto:contato@acoriana.com.br">
+                        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                        contato@acoriana.com.br
+                    </a>
+                    <a href="https://wa.me/5515997491809" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        WhatsApp Pedidos
+                    </a>
+                </address>
+            </div>
+        </div>
+
+        <div class="rodape-bottom">
+            <div class="rodape-bottom-conteudo">
+                <p>
+                    &copy; <span id="ano-atual">2026</span>
+                    Açoriana Conveniência • Pães Especiais.
+                    Todos os direitos reservados.
+                </p>
+
+                <div class="rodape-legal">
+                    <span>Protótipo acadêmico: valores demonstrativos.</span>
+                    <span>O carrinho fica salvo neste navegador.</span>
+                </div>
+
+                <a href="#" class="rodape-topo">
+                    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                    Voltar ao topo
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/produtos.js"></script>
+    <script src="js/produto.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/rodape.js" defer></script>
+</body>
+</html>
