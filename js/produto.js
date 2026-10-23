@@ -13,6 +13,12 @@ const precoProduto = document.querySelector("#preco-produto");
 const breadcrumbProduto = document.querySelector("#breadcrumb-produto");
 const avisoProduto = document.querySelector("#aviso-produto");
 const botaoAdicionar = document.querySelector("#adicionar-produto");
+const botaoDiminuir = document.querySelector("#diminuir-quantidade");
+const botaoAumentar = document.querySelector("#aumentar-quantidade");
+const campoQuantidade = document.querySelector("#quantidade-produto");
+
+const QUANTIDADE_MAXIMA_PRODUTO = 99;
+let quantidadeAtual = 1;
 
 function formatarPreco(preco) {
     return preco.toLocaleString("pt-BR", {
@@ -26,14 +32,17 @@ function configurarImagem(imagem, produto) {
     imagem.src = produto.imagem;
 
     imagem.onerror = () => {
-        const imagemFallback = "assets/logo/logo_padaria_acoriana.png";
-
-        if (!imagem.src.endsWith(imagemFallback)) {
-            imagem.src = imagemFallback;
-        } else {
-            imagem.onerror = null;
-        }
+        imagem.onerror = null;
+        imagem.src = "assets/produtos/nao-encontrado.png";
     };
+}
+
+function atualizarQuantidade() {
+    campoQuantidade.value = quantidadeAtual;
+    campoQuantidade.textContent = quantidadeAtual;
+
+    botaoDiminuir.disabled = quantidadeAtual <= 1;
+    botaoAumentar.disabled = quantidadeAtual >= QUANTIDADE_MAXIMA_PRODUTO;
 }
 
 function exibirProduto(produto) {
@@ -48,6 +57,8 @@ function exibirProduto(produto) {
     document.title = `${produto.nome} | Açoriana Conveniência`;
 
     avisoProduto.textContent = "";
+
+    atualizarQuantidade();
 }
 
 function exibirProdutoNaoEncontrado() {
@@ -71,11 +82,36 @@ function exibirProdutoNaoEncontrado() {
     botaoAdicionar.disabled = true;
     botaoAdicionar.setAttribute("aria-disabled", "true");
 
+    botaoDiminuir.disabled = true;
+    botaoAumentar.disabled = true;
+    campoQuantidade.disabled = true;
+
     document.title = "Produto não encontrado | Açoriana Conveniência";
 }
 
 if (produtoSelecionado) {
     exibirProduto(produtoSelecionado);
+
+    botaoDiminuir.addEventListener("click", () => {
+        if (quantidadeAtual > 1) {
+            quantidadeAtual--;
+            atualizarQuantidade();
+        }
+    });
+
+    botaoAumentar.addEventListener("click", () => {
+        if (quantidadeAtual < QUANTIDADE_MAXIMA_PRODUTO) {
+            quantidadeAtual++;
+            atualizarQuantidade();
+        }
+    });
+
+    botaoAdicionar.addEventListener("click", () => {
+        adicionarAoCarrinho(produtoSelecionado, quantidadeAtual);
+
+        avisoProduto.textContent =
+            `${quantidadeAtual} unidade(s) de ${produtoSelecionado.nome} adicionada(s) ao carrinho.`;
+    });
 } else {
     exibirProdutoNaoEncontrado();
 }
