@@ -1,8 +1,9 @@
 /*
  * Comportamentos compartilhados da Açoriana.
- * Este arquivo externo cuida do carrinho, dos destaques, do menu e do resumo.
- * Não envia pedidos nem dados para servidores: trata-se de um protótipo acadêmico.
+ * Este arquivo cuida do carrinho, dos destaques, do menu e dos pedidos pelo WhatsApp.
+ * Os pedidos são montados no navegador e enviados pelo próprio usuário.
  */
+
 "use strict";
 
 // Chave já utilizada na versão anterior, preservando carrinhos existentes.
@@ -266,36 +267,54 @@ function configurarDestaques() {
     });
 }
 
+
+
 /** Abre um resumo local; o usuário não é levado a um pagamento inexistente. */
+function gerarMensagemPedido() {
+    const linhas = [
+        "Olá! Gostaria de fazer uma encomenda na Açoriana Conveniência.",
+        "",
+        "*Meu pedido:*"
+    ];
+
+    carrinho.forEach((produto) => {
+        linhas.push(
+            "",
+            `*${produto.nome}*`,
+            `Quantidade: ${produto.quantidade}`,
+            `Preço unitário: ${formatarPreco(produto.preco)}`,
+            `Subtotal: ${formatarPreco(produto.preco * produto.quantidade)}`
+        );
+    });
+
+    linhas.push(
+        "",
+        `*Total do pedido: ${formatarPreco(calcularTotal())}*`,
+        "",
+        "Aguardo a confirmação da encomenda. Obrigado!"
+    );
+
+    return linhas.join("\n");
+}
+
 function configurarResumoPedido() {
     const botao = document.querySelector(".btn-finalizar");
     if (!botao) {
         return;
     }
-    const dialogo = document.createElement("dialog");
-    dialogo.className = "dialogo-pedido";
-    dialogo.setAttribute("aria-labelledby", "titulo-resumo");
-    dialogo.innerHTML = `
-        <h2 id="titulo-resumo">Resumo da encomenda</h2>
-        <p>Confira sua seleção. Este protótipo não envia pedidos nem recebe pagamentos.</p>
-        <pre class="texto-pedido"></pre>
-        <button type="button" class="fechar-resumo">Voltar ao carrinho</button>
-    `;
-    document.body.appendChild(dialogo);
+
     botao.addEventListener("click", () => {
         if (carrinho.length === 0) {
-            avisar("Adicione produtos antes de conferir o resumo.");
+            avisar("Adicione produtos antes de finalizar o pedido.");
             return;
         }
-        const linhas = carrinho.map((produto) => {
-            return `${produto.quantidade} x ${produto.nome}: ${formatarPreco(produto.preco * produto.quantidade)}`;
-        });
-        linhas.push("", `Total demonstrativo: ${formatarPreco(calcularTotal())}`);
-        dialogo.querySelector(".texto-pedido").textContent = linhas.join("\n");
-        dialogo.showModal();
+
+        const telefone = "5515997491809";
+        const mensagem = gerarMensagemPedido();
+        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(url, "_blank", "noopener,noreferrer");
     });
-    // O dialog nativo também fecha com Escape e devolve o foco ao botão inicial.
-    dialogo.querySelector(".fechar-resumo").addEventListener("click", () => dialogo.close());
 }
 
 /** Habilita a navegação móvel sem esconder o menu quando JavaScript está desligado. */
