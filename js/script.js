@@ -313,7 +313,8 @@ function configurarResumoPedido() {
         const mensagem = gerarMensagemPedido();
         const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
 
-        window.open(url, "_blank", "noopener,noreferrer");
+        // Evita bloqueio de pop-ups navegando diretamente para o WhatsApp.
+        window.location.assign(url);
     });
 }
 
