@@ -1,14 +1,16 @@
 # Açoriana Conveniência
 
-Site institucional e catálogo demonstrativo da Padaria Açoriana.
-Projeto acadêmico da disciplina de Web Design, desenvolvido com HTML, CSS e JavaScript.
-A identidade visual e as páginas existentes foram preservadas nesta adequação.
+Site institucional e catálogo demonstrativo da Padaria Açoriana, desenvolvido como projeto acadêmico da disciplina de Web Design com HTML5, CSS3 e JavaScript.
+
+- **Site publicado:** https://padariaacoriana.vercel.app/
+- **Código-fonte:** https://github.com/Mauogs/acoriana-site
+- **Quadro de tarefas:** https://trello.com/b/waoyoNKv/web
 
 ## Objetivo
 
-Apresentar a padaria, permitir a consulta de produtos e organizar uma seleção no carrinho.
-O site é um protótipo: preços, imagens e contatos devem ser confirmados antes de uso comercial.
-Não existe cobrança, pagamento, envio de encomenda ou integração com banco de dados.
+Apresentar a padaria, permitir a consulta de produtos e organizar uma seleção no carrinho. O botão **Finalizar pedido pelo WhatsApp** prepara uma mensagem com produtos, quantidades, valores e total, e redireciona o navegador ao WhatsApp.
+O envio da mensagem e a confirmação da encomenda dependem do próprio usuário e do atendimento externo; não há pedido registrado automaticamente, pagamento, estoque ou banco de dados.
+**Atenção:** este é um protótipo acadêmico; preços, imagens e telefones são demonstrativos e devem ser confirmados antes de qualquer uso comercial.
 
 ## Tecnologias
 
@@ -17,31 +19,40 @@ Não existe cobrança, pagamento, envio de encomenda ou integração com banco d
 - JavaScript externo para eventos, DOM, filtros e cálculos.
 - localStorage para persistir o carrinho no navegador.
 - Git para versionamento.
-- GitHub para publicação do código e revisão por pull request.
-- Font Awesome externo para os ícones da página inicial.
+- GitHub para armazenamento do código, branches e revisão por pull requests.
+- Trello para acompanhamento visual das atividades do grupo.
+- Vercel para hospedagem e publicação da branch principal.
+- Playwright com Chromium para os testes de interação registrados em outubro de 2026.
+- Font Awesome externo para os ícones das páginas.
 
 ## Estrutura do projeto
 
 ```text
 acoriana-site/
-├── index.html
-├── catalogo.html
-├── carrinho.html
+├── index.html                  # Página inicial
+├── catalogo.html               # Busca, filtros e listagem
+├── produto.html                # Detalhes de um produto
+├── carrinho.html               # Itens, totais e WhatsApp
+├── sobre.html                  # Página institucional
 ├── README.md
 ├── css/
 │   ├── style.css
+│   ├── responsivo.css
 │   ├── catalogo.css
+│   ├── produto.css
 │   ├── carrinho.css
-│   └── responsivo.css
+│   ├── sobre.css
+│   ├── rodape.css
+│   └── pagina-contato.css
 ├── js/
-│   ├── script.js
-│   ├── produtos.js
-│   └── catalogo.js
-└── assets/
-    ├── banners/
-    ├── icones/
-    ├── logo/
-    └── produtos/
+│   ├── script.js               # Carrinho, menu e WhatsApp
+│   ├── produtos.js             # Dados demonstrativos
+│   ├── catalogo.js             # Busca, filtros e catálogo
+│   ├── produto.js              # Detalhamento do produto
+│   └── rodape.js
+├── docs/
+│   └── verificacao-atividade.md
+└── assets/                     # Imagens, ícones e logotipos
 ```
 
 ## Como executar
@@ -58,11 +69,8 @@ O servidor HTTP evita diferenças do armazenamento ao abrir páginas diretamente
 
 ## JavaScript externo
 
-A página inicial importa `js/script.js` por meio da tag `<script src="js/script.js"></script>`.
-O catálogo carrega `produtos.js`, `script.js` e `catalogo.js`, nessa ordem.
-O carrinho carrega `script.js` ao final do corpo da página.
-A ordem torna os dados e as funções compartilhadas disponíveis antes de renderizar o catálogo.
-Não são utilizados eventos JavaScript inline nos elementos HTML.
+As páginas carregam scripts externos. A página inicial utiliza `script.js`, e o catálogo carrega `produtos.js`, `script.js` e `catalogo.js` nessa ordem. A página `produto.html` usa `produtos.js` e `produto.js` para localizar o item pelo parâmetro `id` da URL.
+O carrinho carrega `script.js` ao final do `body`. A ordem dos scripts disponibiliza os dados e as funções necessários antes da execução dos recursos interativos. O rodapé tem comportamentos adicionais em `rodape.js`.
 
 ## Funcionalidades implementadas
 
@@ -123,11 +131,12 @@ Quando o último produto é removido, surge o estado vazio com acesso ao catálo
 `formatarPreco` utiliza `Intl.NumberFormat` para exibir reais no padrão brasileiro.
 O protótipo não inclui frete, descontos, cobrança ou validação de preços em servidor.
 
-### 11. Resumo da encomenda
+### 11. Encomenda pelo WhatsApp
 
-O botão do carrinho abre um `dialog` com produtos, quantidades e total demonstrativo.
-O fechamento funciona pelo botão ou pela tecla Escape.
-A janela informa expressamente que o resumo não envia pedidos nem recebe pagamentos.
+`gerarMensagemPedido` monta uma mensagem com os produtos selecionados, quantidades, preços unitários, subtotais e total.
+No clique em **Finalizar pedido pelo WhatsApp**, `configurarResumoPedido` verifica se o carrinho tem itens e gera uma URL `https://wa.me/...` com o texto codificado por `encodeURIComponent`.
+A navegação usa `window.location.assign(url)`, e não `window.open`, para evitar dependência de abertura de uma nova aba.
+**O site apenas prepara a mensagem e abre o WhatsApp.** O usuário precisa confirmar o envio; não há cobrança, processamento de pagamento ou confirmação automática da encomenda.
 
 ### 12. Menu móvel
 
@@ -179,26 +188,31 @@ No PowerShell, use `(Get-Content caminho-do-arquivo).Count` para cada arquivo.
 5. Altere uma quantidade e adicione o produto.
 6. No carrinho, aumente, diminua e remova itens.
 7. Recarregue a página e confira a persistência.
-8. Abra o resumo e feche com Escape.
+8. Com itens no carrinho, clique em **Finalizar pedido pelo WhatsApp** e confira a abertura do WhatsApp com os produtos e o total preenchidos. Não envie a mensagem durante o teste.
 9. Em tela móvel, abra o menu e navegue pelos links.
 10. Abra outra aba na mesma origem para conferir a sincronização.
 
-## Versionamento e colaboração
+## Versionamento, gestão e publicação
 
-O repositório já possuía histórico Git e publicação no GitHub antes desta adequação.
-As mudanças seguem o padrão existente de mensagens com prefixos `feat:`, `fix:` e `docs:`.
-A branch desta adequação é `feat/adequar-atividade-javascript`.
-A revisão das mudanças deve ser feita pelo pull request antes da integração à `main`.
-O relatório distingue operações realizadas no ambiente de validação de etapas feitas no VS Code.
+- A branch `main` representa a versão principal do código. Novas funcionalidades e correções são trabalhadas em branches e revisadas em pull requests.
+- Mensagens de commit utilizam prefixos descritivos como `feat:`, `fix:` e `docs:`.
+- O Trello auxilia na organização visual das tarefas: https://trello.com/b/waoyoNKv/web
+- A Vercel está conectada ao repositório e publica a versão de produção em https://padariaacoriana.vercel.app/.
+- Em **21/11/2026**, o pull request [#13](https://github.com/Mauogs/acoriana-site/pull/13) integrou à `main` a alteração que substituiu a abertura de uma nova aba pelo redirecionamento direto ao WhatsApp. A Vercel registrou esse deploy de produção como `READY`.
+
+## Evidências e alcance dos testes
+
+O arquivo [docs/verificacao-atividade.md](docs/verificacao-atividade.md) documenta testes com Playwright e Chromium realizados em **16/10/2026**, em uma revisão anterior do código.
+Entre os cenários registrados estão busca e filtros, carrinho, persistência, sincronização entre abas e navegação móvel. A referência histórica a um **resumo modal** nesse arquivo pertence à versão testada naquela data; a versão atual usa **redirecionamento direto ao WhatsApp**.
+Esses resultados históricos **não comprovam, por si só, testes automatizados do botão após a alteração de 21/11/2026**. O procedimento manual correspondente está descrito acima.
 
 ## Limitações do protótipo
 
-As imagens do catálogo usam URLs externas e dependem de conectividade.
-O carrinho pertence apenas ao navegador e pode ser apagado nas configurações de privacidade.
-O armazenamento local pode ser alterado pelo próprio usuário e não representa uma base comercial.
-Os contatos e preços existentes são demonstrativos e precisam de revisão para publicação comercial.
-Não há autenticação, estoque, entrega, pagamento ou backend.
-Os exemplos exatos apresentados em aula devem ser confirmados pelos integrantes antes da entrega.
+Parte das imagens do catálogo utiliza URLs externas e depende de conectividade. Os produtos e preços são dados demonstrativos.
+O carrinho é salvo no navegador; os dados podem ser apagados ou alterados pelo próprio usuário e não constituem uma base comercial.
+Os links de contato presentes nas páginas devem ser conferidos pelo grupo antes de divulgação pública, pois podem representar dados demonstrativos. O WhatsApp só recebe a mensagem se o usuário decidir enviá-la.
+Não há autenticação, gerenciamento de estoque, cálculo de entrega, cobrança, pagamento ou backend.
+A verificação final em dispositivos reais e a confirmação dos requisitos específicos apresentados em aula são responsabilidades do grupo.
 
 ## Autoria
 
